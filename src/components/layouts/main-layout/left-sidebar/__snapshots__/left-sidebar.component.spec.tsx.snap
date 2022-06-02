@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeftSidebar Should render LeftSidebar component 1`] = `
+<DocumentFragment>
+  <ul
+    class="bp4-menu"
+  >
+    <a
+      href="/"
+    >
+      <li
+        class=""
+      >
+        <div
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <span
+            class="bp4-menu-item-icon"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-home"
+              icon="home"
+              tabindex="-1"
+            >
+              <svg
+                data-icon="home"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M2 10v5c0 .55.45 1 1 1h3v-5h4v5h3c.55 0 1-.45 1-1v-5L8 4l-6 6zm13.71-2.71L14 5.59V2c0-.55-.45-1-1-1s-1 .45-1 1v1.59L8.71.29C8.53.11 8.28 0 8 0s-.53.11-.71.29l-7 7a1.003 1.003 0 001.42 1.42L8 2.41l6.29 6.29c.18.19.43.3.71.3a1.003 1.003 0 00.71-1.71z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            Boshqaruv paneli
+          </div>
+        </div>
+      </li>
+    </a>
+    <a
+      href="/domains"
+    >
+      <li
+        class=""
+      >
+        <div
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <span
+            class="bp4-menu-item-icon"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-control"
+              icon="control"
+              tabindex="-1"
+            >
+              <svg
+                data-icon="control"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M13 8H8v5h5V8zm0-5H8v4h5V3zm2-3H1C.45 0 0 .45 0 1v14c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1zm-1 14H2V2h12v12zM7 3H3v10h4V3z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            Ma'lumot turlari
+          </div>
+        </div>
+      </li>
+    </a>
+    <a
+      href="/form-types"
+    >
+      <li
+        class=""
+      >
+        <div
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <span
+            class="bp4-menu-item-icon"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-form"
+              icon="form"
+              tabindex="-1"
+            >
+              <svg
+                data-icon="form"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M2 11v2h2v-2H2zM1 9h4c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1zm9-6h5c.55 0 1 .45 1 1s-.45 1-1 1h-5c-.55 0-1-.45-1-1s.45-1 1-1zM6 1a1.003 1.003 0 01.71 1.71l-3 4C3.53 6.89 3.28 7 3 7s-.53-.11-.71-.29l-2-2a1.003 1.003 0 011.42-1.42L3 4.59l2.29-3.3C5.47 1.11 5.72 1 6 1zm4 10h5c.55 0 1 .45 1 1s-.45 1-1 1h-5c-.55 0-1-.45-1-1s.45-1 1-1z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            Forma turlari
+          </div>
+        </div>
+      </li>
+    </a>
+    <a
+      href="/users"
+    >
+      <li
+        class=""
+      >
+        <div
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <span
+            class="bp4-menu-item-icon"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-user"
+              icon="user"
+              tabindex="-1"
+            >
+              <svg
+                data-icon="user"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M7.99-.01A7.998 7.998 0 00.03 8.77c.01.09.03.18.04.28.02.15.04.31.07.47.02.11.05.22.08.34.03.13.06.26.1.38.04.12.08.25.12.37.04.11.08.21.12.32a6.583 6.583 0 00.3.65c.07.14.14.27.22.4.04.07.08.13.12.2l.27.42.1.13a7.973 7.973 0 003.83 2.82c.03.01.05.02.07.03.37.12.75.22 1.14.29l.2.03c.39.06.79.1 1.2.1s.81-.04 1.2-.1l.2-.03c.39-.07.77-.16 1.14-.29.03-.01.05-.02.07-.03a8.037 8.037 0 003.83-2.82c.03-.04.06-.08.09-.13.1-.14.19-.28.28-.42.04-.07.08-.13.12-.2.08-.13.15-.27.22-.41.04-.08.08-.17.12-.26.06-.13.11-.26.17-.39.04-.1.08-.21.12-.32.04-.12.08-.24.12-.37.04-.13.07-.25.1-.38.03-.11.06-.22.08-.34.03-.16.05-.31.07-.47.01-.09.03-.18.04-.28.02-.26.04-.51.04-.78-.03-4.41-3.61-7.99-8.03-7.99zm0 14.4c-1.98 0-3.75-.9-4.92-2.31.67-.36 1.49-.66 2.14-.95 1.16-.52 1.04-.84 1.08-1.27.01-.06.01-.11.01-.17-.41-.36-.74-.86-.96-1.44v-.01c0-.01-.01-.02-.01-.02-.05-.13-.09-.26-.12-.39-.28-.05-.44-.35-.5-.63-.06-.11-.18-.38-.15-.69.04-.41.2-.59.38-.67v-.06c0-.51.05-1.24.14-1.72.02-.13.05-.26.09-.39.17-.59.53-1.12 1.01-1.49.49-.38 1.19-.59 1.82-.59.62 0 1.32.2 1.82.59.48.37.84.9 1.01 1.49.04.13.07.26.09.4.09.48.14 1.21.14 1.72v.07c.18.08.33.26.37.66.03.31-.1.58-.16.69-.06.27-.21.57-.48.62-.03.13-.07.26-.12.38 0 .01-.01.04-.01.04-.21.57-.54 1.06-.94 1.42 0 .06.01.13.01.19.04.43-.12.75 1.05 1.27.65.29 1.47.6 2.14.95a6.415 6.415 0 01-4.93 2.31z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            Foydalanuvchilar
+          </div>
+        </div>
+      </li>
+    </a>
+    <a
+      href="/roles"
+    >
+      <li
+        class=""
+      >
+        <div
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <span
+            class="bp4-menu-item-icon"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-key"
+              icon="key"
+              tabindex="-1"
+            >
+              <svg
+                data-icon="key"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M11 0C8.24 0 6 2.24 6 5c0 1.02.31 1.96.83 2.75L.29 14.29a1.003 1.003 0 001.42 1.42L3 14.41l1.29 1.29c.18.19.43.3.71.3s.53-.11.71-.29l2-2c.18-.18.29-.43.29-.71 0-.28-.11-.53-.29-.71L6.41 11l1.83-1.83c.8.52 1.74.83 2.76.83 2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-.23 0-.45-.03-.66-.08-.01 0-.02-.01-.03-.01-.21-.05-.41-.12-.6-.21a3.014 3.014 0 01-1.62-2c0-.01-.01-.02-.01-.03C8.03 5.45 8 5.23 8 5c0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            Rollar
+          </div>
+        </div>
+      </li>
+    </a>
+    <a
+      href="/settings"
+    >
+      <li
+        class=""
+      >
+        <div
+          class="bp4-menu-item bp4-popover-dismiss"
+          tabindex="0"
+        >
+          <span
+            class="bp4-menu-item-icon"
+          >
+            <span
+              aria-hidden="true"
+              class="bp4-icon bp4-icon-settings"
+              icon="settings"
+              tabindex="-1"
+            >
+              <svg
+                data-icon="settings"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M3 1c0-.55-.45-1-1-1S1 .45 1 1v3h2V1zm0 4H1c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1zm12-4c0-.55-.45-1-1-1s-1 .45-1 1v2h2V1zM9 1c0-.55-.45-1-1-1S7 .45 7 1v6h2V1zM1 15c0 .55.45 1 1 1s1-.45 1-1v-5H1v5zM15 4h-2c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zm-2 11c0 .55.45 1 1 1s1-.45 1-1V9h-2v6zM9 8H7c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-2 7c0 .55.45 1 1 1s1-.45 1-1v-2H7v2z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="bp4-fill bp4-text-overflow-ellipsis"
+          >
+            Sozlamalar
+          </div>
+        </div>
+      </li>
+    </a>
+  </ul>
+</DocumentFragment>
+`;

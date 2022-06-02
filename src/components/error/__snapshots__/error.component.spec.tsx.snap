@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Should render Error component 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.c0 h1 {
+  font-size: 5rem;
+}
+
+.c0 p {
+  font-size: 2rem;
+}
+
+<div
+    class="c0"
+  >
+    <h1 />
+    <p />
+  </div>
+</DocumentFragment>
+`;

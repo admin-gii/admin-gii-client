@@ -1,0 +1,41 @@
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "~@blueprintjs/popover2/lib/css/blueprint-popover2.css";
+@import "~@blueprintjs/table/lib/css/table.css";
+
+.w-half {
+  width: 50%;
+}
+
+.w-quarter {
+  width: 25%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-one-of-three {
+  width: 33.33%;
+}
+
+.w-two-of-three {
+  width: 66.66%;
+}
+
+.w-one-of-five {
+  width: 20%;
+}
+
+.w-two-of-five {
+  width: 40%;
+}
+
+.w-three-of-five {
+  width: 60%;
+}
+
+.w-four-of-five {
+  width: 60%;
+}

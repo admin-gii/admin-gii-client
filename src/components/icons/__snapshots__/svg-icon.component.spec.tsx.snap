@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms Context Should render Icon component 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 2rem;
+  height: 2rem;
+  fill: #000000;
+  stroke: none;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+
+.c0[disabled] {
+  opacity: 0.2;
+}
+
+<svg
+    class="c0"
+    data-testid="svg-icon-component"
+  >
+    <use
+      xlink:href="sprite.svg#badge-icon"
+    />
+  </svg>
+</DocumentFragment>
+`;

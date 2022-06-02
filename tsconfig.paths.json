@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@main": ["src/index"],
+      "@test-utils": ["./src/test-utils/index"],
+      "@test-utils/*": ["./src/test-utils/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@hooks": ["./src/hooks/index"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@store": ["./src/store/index"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@types": ["./src/types/index"],
+      "@services": ["./src/services/index"],
+      "@services/*": ["./src/services/*"],
+      "@components/*": ["./src/components/*"],
+      "@auth/*": ["./src/modules/auth/*"],
+      "@dashboard/*": ["./src/modules/dashboard/*"],
+      "@domains/*": ["./src/modules/domains/*"],
+      "@form-types/*": ["./src/modules/form-types/*"],
+      "@roles/*": ["./src/modules/roles/*"],
+      "@settings/*": ["./src/modules/settings/*"],
+      "@users/*": ["./src/modules/users/*"]
+    }
+  }
+}

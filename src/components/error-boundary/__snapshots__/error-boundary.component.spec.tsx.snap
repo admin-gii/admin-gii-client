@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Common Context Should render ErrorBoundary component 1`] = `
+<DocumentFragment>
+  <h1
+    data-testid="error-component"
+  >
+    Something is wrong
+  </h1>
+</DocumentFragment>
+`;
