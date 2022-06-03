@@ -21,7 +21,7 @@ export const InputField = hoc(
           helperText={error?.message || helperText}
           label={label}
           labelFor={`${name}-input`}
-          labelInfo={rules.required && '(majburiy)'}
+          labelInfo={rules?.required && '(majburiy)'}
           intent={error ? 'danger' : 'none'}
         >
           <InputGroup

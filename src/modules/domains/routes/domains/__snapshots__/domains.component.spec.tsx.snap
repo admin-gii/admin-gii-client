@@ -2,9 +2,55 @@
 
 exports[`Domains Should render Domains component 1`] = `
 <DocumentFragment>
-  <div
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 20px;
+}
+
+<div
     class=""
   >
+    <button
+      class="bp4-button bp4-intent-primary"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="bp4-icon bp4-icon-add"
+        icon="add"
+        tabindex="-1"
+      >
+        <svg
+          data-icon="add"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <path
+            d="M10.99 6.99h-2v-2c0-.55-.45-1-1-1s-1 .45-1 1v2h-2c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1v-2h2c.55 0 1-.45 1-1s-.45-1-1-1zm-3-7c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.68 6-6 6z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <span
+        class="bp4-button-text"
+      >
+        Qo'shish
+      </span>
+    </button>
+    <div
+      class="c0"
+      height="20px"
+    />
+    <h3
+      class="bp4-heading"
+    >
+      Ma'lumot turlari
+    </h3>
     <div
       class=""
     >
@@ -32,11 +78,11 @@ exports[`Domains Should render Domains component 1`] = `
                   class="bp4-table-column-headers"
                 >
                   <div
-                    style="width: 260px;"
+                    style="width: 560px;"
                   >
                     <div
                       class="bp4-table-thead bp4-table-column-header-tr"
-                      style="transform: translateX(0px); width: 260px;"
+                      style="transform: translateX(0px); width: 560px;"
                     >
                       <div
                         class="bp4-table-header bp4-table-cell-col-0 bp4-table-column-header-cell"
@@ -106,7 +152,7 @@ exports[`Domains Should render Domains component 1`] = `
                       >
                         <div
                           class="bp4-table-column-name"
-                          title="Name"
+                          title="Nomi"
                         >
                           <div
                             class="bp4-table-th-menu-container bp-table-text-no-measure"
@@ -147,7 +193,7 @@ exports[`Domains Should render Domains component 1`] = `
                             <div
                               class="bp4-table-truncated-text"
                             >
-                              Name
+                              Nomi
                             </div>
                           </div>
                         </div>
@@ -163,19 +209,83 @@ exports[`Domains Should render Domains component 1`] = `
                         </div>
                       </div>
                       <div
-                        class="bp4-table-header bp4-table-last-in-row bp4-table-cell-col-2 bp4-table-column-header-cell"
-                        style="flex-basis: 55px; min-width: 0px; width: 55px;"
+                        class="bp4-table-header bp4-table-cell-col-2 bp4-table-column-header-cell"
+                        style="flex-basis: 150px; min-width: 0px; width: 150px;"
                       >
                         <div
                           class="bp4-table-column-name"
-                          title=""
+                          title="Slag"
+                        >
+                          <div
+                            class="bp4-table-th-menu-container bp-table-text-no-measure"
+                          >
+                            <div
+                              class="bp4-table-th-menu-container-background"
+                            />
+                            <span
+                              class="bp4-popover-wrapper bp4-table-th-menu"
+                            >
+                              <span
+                                aria-haspopup="true"
+                                class="bp4-popover-target"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  class="bp4-icon bp4-icon-chevron-down"
+                                  icon="chevron-down"
+                                >
+                                  <svg
+                                    data-icon="chevron-down"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                  >
+                                    <path
+                                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="bp4-table-column-name-text"
+                          >
+                            <div
+                              class="bp4-table-truncated-text"
+                            >
+                              Slag
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="bp4-table-header-content"
+                        />
+                        <div
+                          class="bp4-table-resize-handle-target bp4-table-resize-vertical"
+                        >
+                          <div
+                            class="bp4-table-resize-handle"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="bp4-table-header bp4-table-last-in-row bp4-table-cell-col-3 bp4-table-column-header-cell"
+                        style="flex-basis: 150px; min-width: 0px; width: 150px;"
+                      >
+                        <div
+                          class="bp4-table-column-name"
+                          title="Roles"
                         >
                           <div
                             class="bp4-table-column-name-text"
                           >
                             <div
                               class="bp4-table-truncated-text"
-                            />
+                            >
+                              Roles
+                            </div>
                           </div>
                         </div>
                         <div
@@ -195,7 +305,7 @@ exports[`Domains Should render Domains component 1`] = `
               </div>
               <div
                 class="bp4-table-bottom-container"
-                style="height: 300px; width: 260px;"
+                style="height: 300px; width: 560px;"
               >
                 <div
                   class="bp4-table-row-headers bp4-table-selection-enabled"
@@ -301,7 +411,7 @@ exports[`Domains Should render Domains component 1`] = `
                   <div>
                     <div
                       class="bp4-table-body-virtual-client bp4-table-cell-client"
-                      style="height: 300px; width: 260px;"
+                      style="height: 300px; width: 560px;"
                     >
                       <div
                         class="bp4-table-body-cells"
@@ -323,43 +433,27 @@ exports[`Domains Should render Domains component 1`] = `
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            John-0
+                            Page-0
                           </div>
                         </div>
                         <div
-                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-0 bp4-table-cell-col-2 bp4-table-last-in-row bp4-table-cell-ledger-even"
-                          style="height: 20px; left: 205px; position: absolute; top: 0px; width: 55px;"
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-0 bp4-table-cell-col-2 bp4-table-cell-ledger-even"
+                          style="height: 20px; left: 205px; position: absolute; top: 0px; width: 150px;"
                         >
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            <span
-                              aria-haspopup="true"
-                              class="bp4-popover2-target"
-                            >
-                              <button
-                                class="bp4-button bp4-small bp4-minimal"
-                                type="button"
-                              >
-                                <span
-                                  aria-hidden="true"
-                                  class="bp4-icon bp4-icon-more"
-                                  icon="more"
-                                >
-                                  <svg
-                                    data-icon="more"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                  >
-                                    <path
-                                      d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                                      fill-rule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                            </span>
+                            page-0
+                          </div>
+                        </div>
+                        <div
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-0 bp4-table-cell-col-3 bp4-table-last-in-row bp4-table-cell-ledger-even"
+                          style="height: 20px; left: 355px; position: absolute; top: 0px; width: 150px;"
+                        >
+                          <div
+                            class="bp4-table-truncated-text bp4-table-no-wrap-text"
+                          >
+                            Admin
                           </div>
                         </div>
                         <div
@@ -379,43 +473,27 @@ exports[`Domains Should render Domains component 1`] = `
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            John-1
+                            Page-1
                           </div>
                         </div>
                         <div
-                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-1 bp4-table-cell-col-2 bp4-table-last-in-row bp4-table-cell-ledger-odd"
-                          style="height: 20px; left: 205px; position: absolute; top: 20px; width: 55px;"
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-1 bp4-table-cell-col-2 bp4-table-cell-ledger-odd"
+                          style="height: 20px; left: 205px; position: absolute; top: 20px; width: 150px;"
                         >
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            <span
-                              aria-haspopup="true"
-                              class="bp4-popover2-target"
-                            >
-                              <button
-                                class="bp4-button bp4-small bp4-minimal"
-                                type="button"
-                              >
-                                <span
-                                  aria-hidden="true"
-                                  class="bp4-icon bp4-icon-more"
-                                  icon="more"
-                                >
-                                  <svg
-                                    data-icon="more"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                  >
-                                    <path
-                                      d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                                      fill-rule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                            </span>
+                            page-1
+                          </div>
+                        </div>
+                        <div
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-1 bp4-table-cell-col-3 bp4-table-last-in-row bp4-table-cell-ledger-odd"
+                          style="height: 20px; left: 355px; position: absolute; top: 20px; width: 150px;"
+                        >
+                          <div
+                            class="bp4-table-truncated-text bp4-table-no-wrap-text"
+                          >
+                            Admin
                           </div>
                         </div>
                         <div
@@ -435,43 +513,27 @@ exports[`Domains Should render Domains component 1`] = `
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            John-2
+                            Page-2
                           </div>
                         </div>
                         <div
-                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-2 bp4-table-cell-col-2 bp4-table-last-in-row bp4-table-cell-ledger-even"
-                          style="height: 20px; left: 205px; position: absolute; top: 40px; width: 55px;"
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-2 bp4-table-cell-col-2 bp4-table-cell-ledger-even"
+                          style="height: 20px; left: 205px; position: absolute; top: 40px; width: 150px;"
                         >
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            <span
-                              aria-haspopup="true"
-                              class="bp4-popover2-target"
-                            >
-                              <button
-                                class="bp4-button bp4-small bp4-minimal"
-                                type="button"
-                              >
-                                <span
-                                  aria-hidden="true"
-                                  class="bp4-icon bp4-icon-more"
-                                  icon="more"
-                                >
-                                  <svg
-                                    data-icon="more"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                  >
-                                    <path
-                                      d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                                      fill-rule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                            </span>
+                            page-2
+                          </div>
+                        </div>
+                        <div
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-2 bp4-table-cell-col-3 bp4-table-last-in-row bp4-table-cell-ledger-even"
+                          style="height: 20px; left: 355px; position: absolute; top: 40px; width: 150px;"
+                        >
+                          <div
+                            class="bp4-table-truncated-text bp4-table-no-wrap-text"
+                          >
+                            Admin
                           </div>
                         </div>
                         <div
@@ -491,43 +553,27 @@ exports[`Domains Should render Domains component 1`] = `
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            John-3
+                            Page-3
                           </div>
                         </div>
                         <div
-                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-3 bp4-table-cell-col-2 bp4-table-last-in-column bp4-table-last-in-row bp4-table-cell-ledger-odd"
-                          style="height: 20px; left: 205px; position: absolute; top: 60px; width: 55px;"
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-3 bp4-table-cell-col-2 bp4-table-last-in-column bp4-table-cell-ledger-odd"
+                          style="height: 20px; left: 205px; position: absolute; top: 60px; width: 150px;"
                         >
                           <div
                             class="bp4-table-truncated-text bp4-table-no-wrap-text"
                           >
-                            <span
-                              aria-haspopup="true"
-                              class="bp4-popover2-target"
-                            >
-                              <button
-                                class="bp4-button bp4-small bp4-minimal"
-                                type="button"
-                              >
-                                <span
-                                  aria-hidden="true"
-                                  class="bp4-icon bp4-icon-more"
-                                  icon="more"
-                                >
-                                  <svg
-                                    data-icon="more"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                  >
-                                    <path
-                                      d="M2 6.03a2 2 0 100 4 2 2 0 100-4zM14 6.03a2 2 0 100 4 2 2 0 100-4zM8 6.03a2 2 0 100 4 2 2 0 100-4z"
-                                      fill-rule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                            </span>
+                            page-3
+                          </div>
+                        </div>
+                        <div
+                          class="bp4-table-cell bp4-table-truncated-cell bp4-table-cell-row-3 bp4-table-cell-col-3 bp4-table-last-in-column bp4-table-last-in-row bp4-table-cell-ledger-odd"
+                          style="height: 20px; left: 355px; position: absolute; top: 60px; width: 150px;"
+                        >
+                          <div
+                            class="bp4-table-truncated-text bp4-table-no-wrap-text"
+                          >
+                            Admin
                           </div>
                         </div>
                       </div>
@@ -555,11 +601,11 @@ exports[`Domains Should render Domains component 1`] = `
                   class="bp4-table-column-headers"
                 >
                   <div
-                    style="width: 260px;"
+                    style="width: 560px;"
                   >
                     <div
                       class="bp4-table-thead bp4-table-column-header-tr"
-                      style="transform: translateX(0px); width: 260px;"
+                      style="transform: translateX(0px); width: 560px;"
                     >
                       <div
                         class="bp4-table-header bp4-table-cell-col-0 bp4-table-column-header-cell"
@@ -629,7 +675,7 @@ exports[`Domains Should render Domains component 1`] = `
                       >
                         <div
                           class="bp4-table-column-name"
-                          title="Name"
+                          title="Nomi"
                         >
                           <div
                             class="bp4-table-th-menu-container bp-table-text-no-measure"
@@ -670,7 +716,7 @@ exports[`Domains Should render Domains component 1`] = `
                             <div
                               class="bp4-table-truncated-text"
                             >
-                              Name
+                              Nomi
                             </div>
                           </div>
                         </div>
@@ -686,19 +732,83 @@ exports[`Domains Should render Domains component 1`] = `
                         </div>
                       </div>
                       <div
-                        class="bp4-table-header bp4-table-last-in-row bp4-table-cell-col-2 bp4-table-column-header-cell"
-                        style="flex-basis: 55px; min-width: 0px; width: 55px;"
+                        class="bp4-table-header bp4-table-cell-col-2 bp4-table-column-header-cell"
+                        style="flex-basis: 150px; min-width: 0px; width: 150px;"
                       >
                         <div
                           class="bp4-table-column-name"
-                          title=""
+                          title="Slag"
+                        >
+                          <div
+                            class="bp4-table-th-menu-container bp-table-text-no-measure"
+                          >
+                            <div
+                              class="bp4-table-th-menu-container-background"
+                            />
+                            <span
+                              class="bp4-popover-wrapper bp4-table-th-menu"
+                            >
+                              <span
+                                aria-haspopup="true"
+                                class="bp4-popover-target"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  class="bp4-icon bp4-icon-chevron-down"
+                                  icon="chevron-down"
+                                >
+                                  <svg
+                                    data-icon="chevron-down"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                  >
+                                    <path
+                                      d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="bp4-table-column-name-text"
+                          >
+                            <div
+                              class="bp4-table-truncated-text"
+                            >
+                              Slag
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="bp4-table-header-content"
+                        />
+                        <div
+                          class="bp4-table-resize-handle-target bp4-table-resize-vertical"
+                        >
+                          <div
+                            class="bp4-table-resize-handle"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="bp4-table-header bp4-table-last-in-row bp4-table-cell-col-3 bp4-table-column-header-cell"
+                        style="flex-basis: 150px; min-width: 0px; width: 150px;"
+                      >
+                        <div
+                          class="bp4-table-column-name"
+                          title="Roles"
                         >
                           <div
                             class="bp4-table-column-name-text"
                           >
                             <div
                               class="bp4-table-truncated-text"
-                            />
+                            >
+                              Roles
+                            </div>
                           </div>
                         </div>
                         <div
@@ -718,7 +828,7 @@ exports[`Domains Should render Domains component 1`] = `
               </div>
               <div
                 class="bp4-table-bottom-container"
-                style="height: 300px; width: 260px;"
+                style="height: 300px; width: 560px;"
               >
                 <div
                   class="bp4-table-row-headers bp4-table-selection-enabled"
@@ -739,7 +849,7 @@ exports[`Domains Should render Domains component 1`] = `
                   <div>
                     <div
                       class="bp4-table-body-virtual-client bp4-table-cell-client"
-                      style="width: 260px;"
+                      style="width: 560px;"
                     >
                       <div
                         class="bp4-table-body-cells"
@@ -768,18 +878,18 @@ exports[`Domains Should render Domains component 1`] = `
                   class="bp4-table-column-headers"
                 >
                   <div
-                    style="width: 260px;"
+                    style="width: 560px;"
                   >
                     <div
                       class="bp4-table-thead bp4-table-column-header-tr"
-                      style="transform: translateX(0px); width: 260px;"
+                      style="transform: translateX(0px); width: 560px;"
                     />
                   </div>
                 </div>
               </div>
               <div
                 class="bp4-table-bottom-container"
-                style="height: 300px; width: 260px;"
+                style="height: 300px; width: 560px;"
               >
                 <div
                   class="bp4-table-row-headers bp4-table-selection-enabled"
@@ -914,18 +1024,18 @@ exports[`Domains Should render Domains component 1`] = `
                   class="bp4-table-column-headers"
                 >
                   <div
-                    style="width: 260px;"
+                    style="width: 560px;"
                   >
                     <div
                       class="bp4-table-thead bp4-table-column-header-tr"
-                      style="transform: translateX(0px); width: 260px;"
+                      style="transform: translateX(0px); width: 560px;"
                     />
                   </div>
                 </div>
               </div>
               <div
                 class="bp4-table-bottom-container"
-                style="height: 300px; width: 260px;"
+                style="height: 300px; width: 560px;"
               >
                 <div
                   class="bp4-table-row-headers bp4-table-selection-enabled"

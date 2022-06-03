@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField Should render InputField component 1`] = `
+<DocumentFragment>
+  <div
+    class="bp4-form-group"
+  >
+    <div
+      class="bp4-form-content"
+    >
+      <div
+        class="bp4-input-group"
+      >
+        <input
+          class="bp4-input"
+          id="test-input"
+          name="test"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
