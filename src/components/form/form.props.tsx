@@ -1,12 +1,11 @@
-import { useCustomForm } from "@hooks";
 
 /**
  * <Form /> props
  */
 export type FormProps = {
-  form: ReturnType<typeof useCustomForm>;
-  onSubmit: (values: unknown) => void;
-  onError?: (errors: unknown) => void;
+  form: any;
+  onSubmit: (values: any) => void;
+  onError?: (errors: any) => void;
 }
 
 export const useFormProps = (_?: FormProps) => ({});

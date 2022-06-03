@@ -1,11 +1,9 @@
-// import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { authActions, useAuthError, useAuthLoading } from '@auth/store';
 import { useProfileSelector } from '@store/common';
 import { useDispatch } from 'react-redux';
 import { LoginFormState } from '@auth/model';
 import { useState } from 'react';
-import { useCustomForm } from '@hooks';
+import { useForm } from 'react-hook-form';
 
 const initialValues: LoginFormState = {
   email: '',
@@ -18,14 +16,11 @@ export const useLoginProps = () => {
   const loading = useAuthLoading();
   const error = useAuthError();
   const [showPassword, setShowPassword] = useState(false);
-  const {register, handleSubmit} = useCustomForm({
+  const form = useForm({
     defaultValues: initialValues
   });
 
-  // const history = useHistory();
-
   const handleLogin = ({ email, password }: LoginFormState) => {
-    console.log(email, password);
     dispatch(
       authActions.login({
         email,
@@ -44,8 +39,7 @@ export const useLoginProps = () => {
     error,
     handleLockClick,
     showPassword,
-    handleSubmit,
-    register,
-    handleLogin
+    handleLogin,
+    form
   };
 };

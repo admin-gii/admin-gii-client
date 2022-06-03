@@ -1,9 +1,9 @@
 import { Button, MenuItem, OptionProps } from '@blueprintjs/core';
 import { ItemRenderer } from '@blueprintjs/select';
 import { CreateDomainForm } from '@domains/model';
-import { useCustomForm } from '@hooks';
 import { parseQueryToString } from '@utils/get-query';
 import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 
 /**
@@ -30,7 +30,7 @@ export const useDomainActionProps = (_?: DomainActionProps) => {
     handleSubmit,
     register,
     formState: { errors }
-  } = useCustomForm({
+  } = useForm({
     defaultValues: initialValues,
     mode: 'onBlur'
   });
