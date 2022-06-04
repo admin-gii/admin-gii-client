@@ -1,82 +1,130 @@
-import { Button, FormGroup, InputGroup, MenuItem, OptionProps } from '@blueprintjs/core';
-import { MultiSelect } from '@blueprintjs/select';
+import { Button, Card } from '@blueprintjs/core';
 import { Error } from '@components/error';
+import { InputField } from '@components/form/fields/input-field';
+import { MultipleSelectField } from '@components/form/fields/multiple-select-field';
+import { FlexContainer, FlexItem } from '@styles/flex-container';
+import { Space } from '@styles/space';
 import { hoc } from '@utils/hoc';
 import { useDomainActionProps } from './domain-action.props';
-import { DomainActionContainer } from './domain-action.style';
+import {
+  DomainActionContainer,
+  DomainActionFieldCounter,
+  DomainActionFieldDelete
+} from './domain-action.style';
 
 /**
  * <DomainAction />
  */
-const RolesMultiSelect = MultiSelect.ofType<OptionProps>();
 
 export const DomainAction = hoc(
   useDomainActionProps,
-  ({
-    updatedItem,
-    isCreate,
-    handleSubmit,
-    onSubmit,
-    register,
-    errors,
-    roles,
-    roleTagRenderer,
-    roleItemRenderer,
-    onRoleItemSelect,
-    selectedRoles,
-    roleClearButton,
-    handleRoleRemove
-  }) => {
+  ({ updatedItem, isCreate, onSubmit, roles, form, fieldsArrayField, fields }) => {
     if (!updatedItem && !isCreate)
       return <Error status='404' text='Bunday sahifa topilmadi' />;
     return (
       <DomainActionContainer>
-        <form className='w-half' onSubmit={handleSubmit(onSubmit)}>
-          <FormGroup
+        <h1 className='bp4-heading'>Yangi ma'lumot turi qo'shish</h1>
+        <Space height='2rem' />
+        <form className='w-half' onSubmit={form.handleSubmit(onSubmit)}>
+          <InputField
+            control={form.control}
+            type='text'
+            name='name'
             label='Nomi'
-            labelFor='name-input'
-            labelInfo='(*)'
-            intent={errors.name ? 'danger' : 'success'}
-            helperText={errors.name?.message}
-          >
-            <InputGroup
-              id='name-input'
-              placeholder='Nomini kiriting'
-              {...register('name', { required: 'Majburiy maydon' })}
-            />
-          </FormGroup>
-          <FormGroup
+            rules={{ required: 'Nomini kiriting!' }}
+          />
+          <InputField
+            control={form.control}
+            type='text'
+            name='slug'
             label='Slag'
-            labelFor='slug-input'
-            labelInfo='(*)'
-            intent={errors.slug ? 'danger' : 'success'}
-            helperText={errors.slug?.message}
-          >
-            <InputGroup
-              id='slug-input'
-              placeholder='Slagini kiriting'
-              {...register('slug', {
-                required: 'Majburiy maydon',
-                pattern: {
-                  value: /^[a-z0-9-_]+$/i,
-                  message:
-                    'Slagda faqat lotin harflar, raqamlar, tire va pastki chiziq bo`ladi'
-                }
-              })}
-            />
-          </FormGroup>
-          <RolesMultiSelect
-            items={roles}
-            tagRenderer={roleTagRenderer}
-            itemRenderer={roleItemRenderer}
-            onItemSelect={onRoleItemSelect}
-            selectedItems={selectedRoles}
-            noResults={<MenuItem disabled={true} text="No results." />}
-            tagInputProps={{
-              onRemove: handleRoleRemove,
-              rightElement: roleClearButton,
+            rules={{
+              required: 'Slagni kiriting!',
+              pattern: {
+                value: /^[a-z0-9-_]+$/i,
+                message:
+                  'Slagda faqat lotin harflar, raqamlar, tire va pastki chiziq bo`ladi'
+              }
             }}
-            fill
+          />
+          <MultipleSelectField
+            control={form.control}
+            name='roles'
+            label='Rollar'
+            items={roles}
+          />
+          <Card>
+            <FlexContainer align='center' wrap='wrap'>
+              <FlexItem col={1}>
+                <h3 className='bp4-heading'>Domain fields</h3>
+              </FlexItem>
+              {fieldsArrayField.fields.map((field, index) => (
+                <FlexContainer key={field.id} gap='20px'>
+                  <FlexItem col={50}>
+                    <DomainActionFieldCounter>
+                      {index === 0 ? '№' : index}
+                    </DomainActionFieldCounter>
+                  </FlexItem>
+                  <FlexItem col={2.12}>
+                    <InputField
+                      control={form.control}
+                      type='text'
+                      name={`fields.${index}.name`}
+                      label='Fieldni nomi'
+                      rules={{ required: 'Nomini kiriting!' }}
+                    />
+                  </FlexItem>
+                  <FlexItem col={2.12}>
+                    <InputField
+                      control={form.control}
+                      type='text'
+                      name={`fields.${index}.slug`}
+                      label='Fieldni slagi'
+                      rules={{
+                        required: 'Slagni kiriting!',
+                        pattern: {
+                          value: /^[a-z0-9-_]+$/i,
+                          message:
+                            'Slagda faqat lotin harflar, raqamlar, tire va pastki chiziq bo`ladi'
+                        }
+                      }}
+                    />
+                  </FlexItem>
+                  {fieldsArrayField.fields.length > 1 && (
+                    <FlexItem col={25}>
+                      <DomainActionFieldDelete>
+                        <Button
+                          icon={'trash'}
+                          minimal={true}
+                          onClick={() => fieldsArrayField.remove(index)}
+                        />
+                      </DomainActionFieldDelete>
+                    </FlexItem>
+                  )}
+                </FlexContainer>
+              ))}
+              <FlexItem col={1}>
+                <Button
+                  intent='primary'
+                  icon='add'
+                  onClick={() =>
+                    fieldsArrayField.prepend({
+                      name: '',
+                      slug: ''
+                    })
+                  }
+                >
+                  Qo'shish
+                </Button>
+              </FlexItem>
+            </FlexContainer>
+          </Card>
+          <Space height='1rem' />
+          <MultipleSelectField
+            control={form.control}
+            name='table_fields'
+            label="Tablitsada ko'rinadigan field-lar"
+            items={fields}
           />
           <Button
             type='submit'
