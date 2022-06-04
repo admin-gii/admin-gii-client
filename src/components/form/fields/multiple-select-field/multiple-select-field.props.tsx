@@ -21,7 +21,7 @@ export const useMultipleSelectFieldProps = (
   const [selectedItems, setSelectedItems] = useState([]);
 
   const {
-    field: { value, onChange, onBlur },
+    field: { value, onChange },
     fieldState: { error }
   } = useController({
     name: props.name,

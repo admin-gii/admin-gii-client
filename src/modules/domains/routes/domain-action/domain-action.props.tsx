@@ -1,8 +1,8 @@
 import { OptionProps } from '@blueprintjs/core';
 import { CreateDomainForm } from '@domains/model';
 import { parseQueryToString } from '@utils/get-query';
-import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useEffect, useMemo, useState } from 'react';
+import { useFieldArray, useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 
 /**
@@ -13,7 +13,9 @@ export type DomainActionProps = {};
 const initialValues: CreateDomainForm = {
   name: '',
   slug: '',
-  roles: []
+  roles: [],
+  fields: [{ name: '', slug: '', id: 'nx172eg2x61e71nxf2' }],
+  table_fields: []
 };
 
 const roles: OptionProps[] = [
@@ -29,12 +31,25 @@ export const useDomainActionProps = (_?: DomainActionProps) => {
     defaultValues: initialValues,
     mode: 'onBlur'
   });
-
-  console.log({ state: form.formState, values: form.getValues() })
+  const fieldsArrayField = useFieldArray({
+    control: form.control,
+    name: 'fields'
+  });
 
   const onSubmit = (values: CreateDomainForm) => {
     console.log({ values });
   };
+
+  const fields = useMemo(
+    () =>
+      fieldsArrayField.fields
+        ?.filter((_, i) => i !== 0)
+        ?.map(field => ({
+          label: field.name,
+          value: field.slug
+        })) || [],
+    [fieldsArrayField.fields]
+  );
 
   useEffect(() => {
     const searchObject = parseQueryToString(history.location.search);
@@ -44,11 +59,14 @@ export const useDomainActionProps = (_?: DomainActionProps) => {
       setUpdatedItem(searchObject.edit);
     }
   }, [history.location.search]);
+
   return {
     updatedItem,
     isCreate,
     onSubmit,
     roles,
-    form
+    form,
+    fieldsArrayField,
+    fields
   };
 };
