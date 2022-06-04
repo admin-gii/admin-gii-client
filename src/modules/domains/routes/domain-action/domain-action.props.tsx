@@ -1,5 +1,4 @@
-import { Button, MenuItem, OptionProps } from '@blueprintjs/core';
-import { ItemRenderer } from '@blueprintjs/select';
+import { OptionProps } from '@blueprintjs/core';
 import { CreateDomainForm } from '@domains/model';
 import { parseQueryToString } from '@utils/get-query';
 import { useEffect, useState } from 'react';
@@ -13,7 +12,8 @@ export type DomainActionProps = {};
 
 const initialValues: CreateDomainForm = {
   name: '',
-  slug: ''
+  slug: '',
+  roles: []
 };
 
 const roles: OptionProps[] = [
@@ -25,58 +25,16 @@ export const useDomainActionProps = (_?: DomainActionProps) => {
   const history = useHistory();
   const [updatedItem, setUpdatedItem] = useState(null);
   const [isCreate, setIsCreate] = useState(true);
-  const [selectedRoles, setSelectedRoles] = useState([]);
-  const {
-    handleSubmit,
-    register,
-    formState: { errors }
-  } = useForm({
+  const form = useForm({
     defaultValues: initialValues,
     mode: 'onBlur'
   });
 
-  const onSubmit = (values: CreateDomainForm) => {};
+  console.log({ state: form.formState, values: form.getValues() })
 
-  const onRoleItemSelect = (item: OptionProps) => {
-    const isSelected = findSelectedRole(item);
-    if (isSelected) {
-      setSelectedRoles(selectedRoles.filter(role => role.value !== item.value));
-    } else {
-      setSelectedRoles([...selectedRoles, item]);
-    }
+  const onSubmit = (values: CreateDomainForm) => {
+    console.log({ values });
   };
-
-  const roleTagRenderer = (item: OptionProps) => item.label;
-
-  const findSelectedRole = (item: OptionProps) => {
-    return selectedRoles.find(role => role.value === item.value);
-  };
-
-  const handleRoleRemove = (label: string, index: number) => {
-    setSelectedRoles(selectedRoles.filter((role, i) => i !== index));
-  }
-
-  const roleItemRenderer: ItemRenderer<OptionProps> = (
-    item: OptionProps,
-    { modifiers, index, handleClick }
-  ) => {
-    if (!modifiers.matchesPredicate) {
-      return null;
-    }
-    return (
-      <MenuItem
-        selected={modifiers.active}
-        icon={findSelectedRole(item) ? 'tick' : 'blank'}
-        key={item.value}
-        onClick={handleClick}
-        text={`${index}. ${item.label}`}
-        shouldDismissPopover={false}
-      />
-    );
-  };
-
-  const roleClearButton =
-            selectedRoles.length > 0 ? <Button icon="cross" minimal={true} onClick={() => setSelectedRoles([])} /> : undefined;
 
   useEffect(() => {
     const searchObject = parseQueryToString(history.location.search);
@@ -89,16 +47,8 @@ export const useDomainActionProps = (_?: DomainActionProps) => {
   return {
     updatedItem,
     isCreate,
-    handleSubmit,
     onSubmit,
-    register,
-    errors,
     roles,
-    roleTagRenderer,
-    roleItemRenderer,
-    onRoleItemSelect,
-    selectedRoles,
-    roleClearButton,
-    handleRoleRemove
+    form
   };
 };
