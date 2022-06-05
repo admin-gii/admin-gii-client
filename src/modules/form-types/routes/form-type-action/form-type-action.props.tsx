@@ -1,8 +1,8 @@
 import { OptionProps } from "@blueprintjs/core";
 import { CreateFormTypeForm } from "@form-types/model";
 import { parseQueryToString } from "@utils/get-query";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useEffect, useMemo, useState } from "react";
+import { useFieldArray, useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 /**
@@ -18,7 +18,9 @@ export type TypeOptionGroup = {
 
 const initialValues: CreateFormTypeForm = {
   name: '',
-  slug: ''
+  slug: '',
+  type: '',
+  options: [{ label: '', value: '', id: 'nx172eg2x61e71nxf2' }]
 };
 
 const types: TypeOptionGroup[] = [
@@ -26,9 +28,9 @@ const types: TypeOptionGroup[] = [
   { label: 'Number', value: 'number' },
   { label: 'Email', value: 'email' },
   { label: 'Textarea', value: 'textarea' },
-  { label: 'Select', value: 'select' },
-  { label: 'Checkbox', value: 'checkbox' },
-  { label: 'Radio', value: 'radio' },
+  { label: 'Select', value: 'select', multiple: true },
+  { label: 'Checkbox', value: 'checkbox', multiple: true },
+  { label: 'Radio', value: 'radio', multiple: true },
   { label: 'Date', value: 'date' },
   { label: 'Time', value: 'time' },
   { label: 'Datetime', value: 'datetime' },
@@ -51,9 +53,18 @@ export const useFormTypeActionProps = (_?: FormTypeActionProps) => {
     mode: 'onBlur'
   });
 
+  const optionsArrayField = useFieldArray({
+    control: form.control,
+    name: 'options'
+  });
+
   const onSubmit = (values: CreateFormTypeForm) => {
     console.log({ values });
   };
+
+  const watchTypeField = form.watch('type')
+
+  const selectedType = useMemo<TypeOptionGroup>(() => types.find(type => type.value === watchTypeField), [watchTypeField])
 
   useEffect(() => {
     const searchObject = parseQueryToString(history.location.search);
@@ -69,7 +80,9 @@ export const useFormTypeActionProps = (_?: FormTypeActionProps) => {
     isCreate,
     onSubmit,
     form,
-    types
+    types,
+    selectedType,
+    optionsArrayField
   };
 };
 

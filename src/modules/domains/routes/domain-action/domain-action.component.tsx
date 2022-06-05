@@ -2,14 +2,13 @@ import { Button, Card, H1, H3 } from '@blueprintjs/core';
 import { Error } from '@components/error';
 import { InputField } from '@components/form/fields/input-field';
 import { MultipleSelectField } from '@components/form/fields/multiple-select-field';
+import { ArrayFieldCounter, ArrayFieldDelete } from '@styles/array-field';
 import { FlexContainer, FlexItem } from '@styles/flex-container';
 import { Space } from '@styles/space';
 import { hoc } from '@utils/hoc';
 import { useDomainActionProps } from './domain-action.props';
 import {
-  DomainActionContainer,
-  DomainActionFieldCounter,
-  DomainActionFieldDelete
+  DomainActionContainer
 } from './domain-action.style';
 
 /**
@@ -61,9 +60,9 @@ export const DomainAction = hoc(
               {fieldsArrayField.fields.map((field, index) => (
                 <FlexContainer key={field.id} gap='20px'>
                   <FlexItem col={50}>
-                    <DomainActionFieldCounter>
+                    <ArrayFieldCounter>
                       {index === 0 ? '№' : index}
-                    </DomainActionFieldCounter>
+                    </ArrayFieldCounter>
                   </FlexItem>
                   <FlexItem col={2.12}>
                     <InputField
@@ -92,13 +91,13 @@ export const DomainAction = hoc(
                   </FlexItem>
                   {fieldsArrayField.fields.length > 1 && (
                     <FlexItem col={25}>
-                      <DomainActionFieldDelete>
+                      <ArrayFieldDelete>
                         <Button
                           icon={'trash'}
                           minimal={true}
                           onClick={() => fieldsArrayField.remove(index)}
                         />
-                      </DomainActionFieldDelete>
+                      </ArrayFieldDelete>
                     </FlexItem>
                   )}
                 </FlexContainer>
