@@ -3,7 +3,24 @@
 exports[`SwitchField Should render SwitchField component 1`] = `
 <DocumentFragment>
   <div
-    class=""
-  />
+    class="bp4-form-group"
+  >
+    <div
+      class="bp4-form-content"
+    >
+      <label
+        class="bp4-control bp4-switch bp4-large"
+      >
+        <input
+          id="test-input"
+          type="checkbox"
+        />
+        <span
+          class="bp4-control-indicator"
+        />
+        Switch
+      </label>
+    </div>
+  </div>
 </DocumentFragment>
 `;

@@ -123,6 +123,26 @@ exports[`FormTypeAction Should render FormTypeAction component 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="bp4-form-group"
+      >
+        <div
+          class="bp4-form-content"
+        >
+          <label
+            class="bp4-control bp4-switch bp4-large"
+          >
+            <input
+              id="has_relation-input"
+              type="checkbox"
+            />
+            <span
+              class="bp4-control-indicator"
+            />
+            Ma'lumot turi bilan bog'lash
+          </label>
+        </div>
+      </div>
       <button
         class="bp4-button bp4-intent-success"
         type="submit"
