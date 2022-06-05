@@ -20,6 +20,7 @@ const initialValues: CreateFormTypeForm = {
   name: '',
   slug: '',
   type: '',
+  has_relation: false,
   options: [{ label: '', value: '', id: 'nx172eg2x61e71nxf2' }]
 };
 
@@ -44,6 +45,10 @@ const types: TypeOptionGroup[] = [
   { label: 'Search', value: 'search' },
 ]
 
+const domains: OptionProps[] = [
+  { label: 'Mock domain 1', value: 'domain_1' },
+]
+
 export const useFormTypeActionProps = (_?: FormTypeActionProps) => {
   const history = useHistory();
   const [updatedItem, setUpdatedItem] = useState(null);
@@ -64,6 +69,8 @@ export const useFormTypeActionProps = (_?: FormTypeActionProps) => {
 
   const watchTypeField = form.watch('type')
 
+  const watchHasRelationField = form.watch('has_relation')
+
   const selectedType = useMemo<TypeOptionGroup>(() => types.find(type => type.value === watchTypeField), [watchTypeField])
 
   useEffect(() => {
@@ -82,7 +89,9 @@ export const useFormTypeActionProps = (_?: FormTypeActionProps) => {
     form,
     types,
     selectedType,
-    optionsArrayField
+    optionsArrayField,
+    watchHasRelationField,
+    domains
   };
 };
 

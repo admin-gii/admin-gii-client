@@ -2,6 +2,7 @@ import { Button, Card, H1, H3 } from '@blueprintjs/core';
 import { Error } from '@components/error';
 import { InputField } from '@components/form/fields/input-field';
 import { SuggestField } from '@components/form/fields/suggest-field';
+import { SwitchField } from '@components/form/fields/switch-field';
 import { ArrayFieldCounter, ArrayFieldDelete } from '@styles/array-field';
 import { FlexContainer, FlexItem } from '@styles/flex-container';
 import { Space } from '@styles/space';
@@ -21,7 +22,9 @@ export const FormTypeAction = hoc(
     form,
     types,
     selectedType,
-    optionsArrayField
+    optionsArrayField,
+    watchHasRelationField,
+    domains
   }) => {
     if (!updatedItem && !isCreate)
       return <Error status='404' text='Bunday sahifa topilmadi' />;
@@ -57,7 +60,18 @@ export const FormTypeAction = hoc(
             label='Types'
             items={types}
           />
-          {selectedType?.multiple && (
+          <SwitchField name='has_relation' control={form.control} label="Ma'lumot turi bilan bog'lash" />
+          {
+            selectedType?.multiple && watchHasRelationField && (
+              <SuggestField
+                control={form.control}
+                name='domain_id'
+                label='Domains'
+                items={domains}
+              />
+            )
+          }
+          {selectedType?.multiple && !watchHasRelationField && (
             <>
               <Card>
                 <FlexContainer align='center' wrap='wrap'>

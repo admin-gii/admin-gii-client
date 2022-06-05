@@ -41,6 +41,7 @@
 }
 
 .popover-height {
-  height: 185px;
+  max-height: 185px;
   overflow-y: auto;
+  background-color: #ffffff;
 }
