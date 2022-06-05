@@ -219,7 +219,7 @@ exports[`DomainAction Should render DomainAction component 1`] = `
             class="c2"
           >
             <h3
-              class="bp4-heading"
+              class="bp4-heading bp4-heading"
             >
               Domain fields
             </h3>
