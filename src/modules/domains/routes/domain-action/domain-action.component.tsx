@@ -1,15 +1,14 @@
-import { Button, Card } from '@blueprintjs/core';
+import { Button, Card, H1, H3 } from '@blueprintjs/core';
 import { Error } from '@components/error';
 import { InputField } from '@components/form/fields/input-field';
 import { MultipleSelectField } from '@components/form/fields/multiple-select-field';
+import { ArrayFieldCounter, ArrayFieldDelete } from '@styles/array-field';
 import { FlexContainer, FlexItem } from '@styles/flex-container';
 import { Space } from '@styles/space';
 import { hoc } from '@utils/hoc';
 import { useDomainActionProps } from './domain-action.props';
 import {
-  DomainActionContainer,
-  DomainActionFieldCounter,
-  DomainActionFieldDelete
+  DomainActionContainer
 } from './domain-action.style';
 
 /**
@@ -23,7 +22,7 @@ export const DomainAction = hoc(
       return <Error status='404' text='Bunday sahifa topilmadi' />;
     return (
       <DomainActionContainer>
-        <h1 className='bp4-heading'>Yangi ma'lumot turi qo'shish</h1>
+        <H1>Yangi ma'lumot turi qo'shish</H1>
         <Space height='2rem' />
         <form className='w-half' onSubmit={form.handleSubmit(onSubmit)}>
           <InputField
@@ -56,14 +55,14 @@ export const DomainAction = hoc(
           <Card>
             <FlexContainer align='center' wrap='wrap'>
               <FlexItem col={1}>
-                <h3 className='bp4-heading'>Domain fields</h3>
+                <H3 className='bp4-heading'>Domain fields</H3>
               </FlexItem>
               {fieldsArrayField.fields.map((field, index) => (
                 <FlexContainer key={field.id} gap='20px'>
                   <FlexItem col={50}>
-                    <DomainActionFieldCounter>
+                    <ArrayFieldCounter>
                       {index === 0 ? '№' : index}
-                    </DomainActionFieldCounter>
+                    </ArrayFieldCounter>
                   </FlexItem>
                   <FlexItem col={2.12}>
                     <InputField
@@ -92,13 +91,13 @@ export const DomainAction = hoc(
                   </FlexItem>
                   {fieldsArrayField.fields.length > 1 && (
                     <FlexItem col={25}>
-                      <DomainActionFieldDelete>
+                      <ArrayFieldDelete>
                         <Button
                           icon={'trash'}
                           minimal={true}
                           onClick={() => fieldsArrayField.remove(index)}
                         />
-                      </DomainActionFieldDelete>
+                      </ArrayFieldDelete>
                     </FlexItem>
                   )}
                 </FlexContainer>

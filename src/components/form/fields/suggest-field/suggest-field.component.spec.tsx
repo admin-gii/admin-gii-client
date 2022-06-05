@@ -1,15 +1,15 @@
 import { customRender } from '@test-utils';
 import { renderHook } from '@testing-library/react-hooks';
 import { useForm } from 'react-hook-form';
-import { SwitchField } from './switch-field.component';
+import { SuggestField } from './suggest-field.component';
 
-describe('SwitchField', () => {
-  test('Should render SwitchField component', async () => {
+describe('SuggestField', () => {
+  test('Should render SuggestField component', async () => {
     const { result } = renderHook(() => useForm({
       defaultValues: { test: '' }
     }));
     const { asFragment } = customRender(
-      <SwitchField name='test' control={result.current.control} label='Switch' />
+      <SuggestField name='test' control={result.current.control} items={[]} />
     );
     expect(asFragment()).toMatchSnapshot();
   });

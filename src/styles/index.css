@@ -39,3 +39,9 @@
 .w-four-of-five {
   width: 60%;
 }
+
+.popover-height {
+  max-height: 185px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}

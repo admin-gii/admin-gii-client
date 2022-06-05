@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuggestField Should render SuggestField component 1`] = `
+<DocumentFragment>
+  <div
+    class="bp4-form-group"
+  >
+    <div
+      class="bp4-form-content"
+    >
+      <div
+        class="bp4-popover-wrapper bp4-fill"
+      >
+        <div
+          aria-haspopup="true"
+          class="bp4-popover-target"
+        >
+          <div
+            class="bp4-input-group bp4-fill"
+          >
+            <input
+              autocomplete="off"
+              class="bp4-input"
+              placeholder="Search..."
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
