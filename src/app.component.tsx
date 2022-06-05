@@ -14,6 +14,7 @@ import { Roles } from '@roles/routes';
 import { FormTypes } from '@form-types/routes';
 import { Domains } from '@domains/routes';
 import { DomainAction } from '@domains/routes';
+import { FormTypeAction } from '@form-types/routes/form-type-action';
 
 export const App = hoc(useAppProps, ({ ready }) => {
   if(!ready) return <Loading />
@@ -30,6 +31,7 @@ export const App = hoc(useAppProps, ({ ready }) => {
                 <Route path='/domains' exact component={Domains} />
                 <Route path='/domains/action' exact component={DomainAction} />
                 <Route path='/form-types' exact component={FormTypes} />
+                <Route path='/form-types/action' exact component={FormTypeAction} />
                 <Route path='/users' exact component={Users} />
                 <Route path='/roles' exact component={Roles} />
                 <Route path='/settings' exact component={Settings} />

@@ -1,4 +1,4 @@
-import { Button, Card } from '@blueprintjs/core';
+import { Button, Card, H1, H3 } from '@blueprintjs/core';
 import { Error } from '@components/error';
 import { InputField } from '@components/form/fields/input-field';
 import { MultipleSelectField } from '@components/form/fields/multiple-select-field';
@@ -23,7 +23,7 @@ export const DomainAction = hoc(
       return <Error status='404' text='Bunday sahifa topilmadi' />;
     return (
       <DomainActionContainer>
-        <h1 className='bp4-heading'>Yangi ma'lumot turi qo'shish</h1>
+        <H1>Yangi ma'lumot turi qo'shish</H1>
         <Space height='2rem' />
         <form className='w-half' onSubmit={form.handleSubmit(onSubmit)}>
           <InputField
@@ -56,7 +56,7 @@ export const DomainAction = hoc(
           <Card>
             <FlexContainer align='center' wrap='wrap'>
               <FlexItem col={1}>
-                <h3 className='bp4-heading'>Domain fields</h3>
+                <H3 className='bp4-heading'>Domain fields</H3>
               </FlexItem>
               {fieldsArrayField.fields.map((field, index) => (
                 <FlexContainer key={field.id} gap='20px'>
