@@ -1,3 +1,4 @@
+import { OptionProps } from "@blueprintjs/core";
 import { CreateFormTypeForm } from "@form-types/model";
 import { parseQueryToString } from "@utils/get-query";
 import { useEffect, useState } from "react";
@@ -11,10 +12,35 @@ export type FormTypeActionProps = {
 
 }
 
+export type TypeOptionGroup = {
+  multiple?: boolean;
+} & OptionProps;
+
 const initialValues: CreateFormTypeForm = {
   name: '',
   slug: ''
 };
+
+const types: TypeOptionGroup[] = [
+  { label: 'Text', value: 'text' },
+  { label: 'Number', value: 'number' },
+  { label: 'Email', value: 'email' },
+  { label: 'Textarea', value: 'textarea' },
+  { label: 'Select', value: 'select' },
+  { label: 'Checkbox', value: 'checkbox' },
+  { label: 'Radio', value: 'radio' },
+  { label: 'Date', value: 'date' },
+  { label: 'Time', value: 'time' },
+  { label: 'Datetime', value: 'datetime' },
+  { label: 'File', value: 'file' },
+  { label: 'Hidden', value: 'hidden' },
+  { label: 'Password', value: 'password' },
+  { label: 'Url', value: 'url' },
+  { label: 'Color', value: 'color' },
+  { label: 'Range', value: 'range' },
+  { label: 'Tel', value: 'tel' },
+  { label: 'Search', value: 'search' },
+]
 
 export const useFormTypeActionProps = (_?: FormTypeActionProps) => {
   const history = useHistory();
@@ -42,7 +68,8 @@ export const useFormTypeActionProps = (_?: FormTypeActionProps) => {
     updatedItem,
     isCreate,
     onSubmit,
-    form
+    form,
+    types
   };
 };
 

@@ -1,6 +1,7 @@
 import { Button, H1 } from '@blueprintjs/core';
 import { Error } from '@components/error';
 import { InputField } from '@components/form/fields/input-field';
+import { SuggestField } from '@components/form/fields/suggest-field';
 import { Space } from '@styles/space';
 import { hoc } from '@utils/hoc';
 import { useFormTypeActionProps } from './form-type-action.props';
@@ -9,7 +10,7 @@ import { FormTypeActionContainer } from './form-type-action.style';
 /**
  * <FormTypeAction />
  */
-export const FormTypeAction = hoc(useFormTypeActionProps, ({ updatedItem, isCreate, onSubmit, form }) => {
+export const FormTypeAction = hoc(useFormTypeActionProps, ({ updatedItem, isCreate, onSubmit, form, types }) => {
   if (!updatedItem && !isCreate)
     return <Error status='404' text='Bunday sahifa topilmadi' />;
   return (
@@ -37,6 +38,12 @@ export const FormTypeAction = hoc(useFormTypeActionProps, ({ updatedItem, isCrea
                 'Slagda faqat lotin harflar, raqamlar, tire va pastki chiziq bo`ladi'
             }
           }}
+        />
+        <SuggestField
+          control={form.control}
+          name='type'
+          label='Types'
+          items={types}
         />
         <Button
           type='submit'
