@@ -1,8 +1,7 @@
-import { string } from "yup";
 
 export type CreateSettingTypeForm = {
-  name: string;
-  surname: string;
+  first_name: string;
+  last_name: string;
   phone: string;
   mail: string;
 };

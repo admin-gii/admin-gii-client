@@ -18,14 +18,14 @@ export const Settings = hoc(
         <InputField
           control={form.control}
           type='text'
-          name='name'
+          name='first_name'
           label='Ism'
           rules={{ required: 'Ismni kiriting!' }}
         />
         <InputField
           control={form.control}
           type='text'
-          name='surname'
+          name='last_name'
           label='Familiya'
           rules={{ required: 'Familiyani kiriting!' }}
         />
