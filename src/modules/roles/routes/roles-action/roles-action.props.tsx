@@ -29,8 +29,6 @@ const roles: OptionProps[] = [
 export const useRolesActionProps = (_?: RolesActionProps) => {
   
     const history = useHistory();
-    const [updatedItem, setUpdatedItem] = useState(null);
-    const [isCreate, setIsCreate] = useState(true);
     const form = useForm({
       defaultValues: initialValues,
       mode: 'onBlur'
@@ -55,19 +53,7 @@ export const useRolesActionProps = (_?: RolesActionProps) => {
       [fieldsArrayField.fields]
     );
   
-    useEffect(() => {
-      const searchObject = parseQueryToString(history.location.search);
-      if (searchObject.add === 'new') {
-        setIsCreate(true);
-      } else if (searchObject.edit) {
-        setUpdatedItem(searchObject.edit);
-      }
-    }, [history.location.search]);
-  
-
   return {
-    updatedItem,
-    isCreate,
     onSubmit,
     roles,
     form,

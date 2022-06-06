@@ -1,9 +1,5 @@
-import { Button, Card, H1, H3 } from '@blueprintjs/core';
-import { Error } from '@components/error';
+import { Button, H1 } from '@blueprintjs/core';
 import { InputField } from '@components/form/fields/input-field';
-import { MultipleSelectField } from '@components/form/fields/multiple-select-field';
-import { ArrayFieldCounter, ArrayFieldDelete } from '@styles/array-field';
-import { FlexContainer, FlexItem } from '@styles/flex-container';
 import { Space } from '@styles/space';
 import { hoc } from '@utils/hoc';
 import { useRolesActionProps } from './roles-action.props';
@@ -15,16 +11,9 @@ import { RolesActionContainer } from './roles-action.style';
 export const RolesAction = hoc(
   useRolesActionProps,
   ({
-    updatedItem,
-    isCreate,
     onSubmit,
-    roles,
     form,
-    fieldsArrayField,
-    fields
   }) => {
-    if (!updatedItem && !isCreate)
-      return <Error status='404' text='Bunday sahifa topilmadi' />;
     return (
       <RolesActionContainer>
         <H1>Yangi role qo'shish</H1>
@@ -52,12 +41,6 @@ export const RolesAction = hoc(
             }}
           />
           <Space height='1rem' />
-          <MultipleSelectField
-            control={form.control}
-            name='table_fields'
-            label="Tablitsada ko'rinadigan field-lar"
-            items={fields}
-          />
           <Button
             type='submit'
             intent='success'
