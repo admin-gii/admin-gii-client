@@ -15,13 +15,19 @@ const initialValues: CreateDomainForm = {
   slug: '',
   roles: [],
   fields: [{ name: '', slug: '', id: 'nx172eg2x61e71nxf2' }],
-  table_fields: []
+  table_fields: [],
+  form_fields: [{ field_value: '', form_type_id: '', id: 'nx172eg2x61e71nxf3' }]
 };
 
 const roles: OptionProps[] = [
   { label: 'Admin', value: 'admin' },
   { label: 'User', value: 'user' }
 ];
+
+const formTypes: OptionProps[] = [
+  { label: 'Text input', value: '1' },
+  { label: 'Number input', value: '2' }
+]
 
 export const useDomainActionProps = (_?: DomainActionProps) => {
   const history = useHistory();
@@ -35,6 +41,11 @@ export const useDomainActionProps = (_?: DomainActionProps) => {
     control: form.control,
     name: 'fields'
   });
+
+  const formFieldsArrayField = useFieldArray({
+    control: form.control,
+    name: 'form_fields'
+  })
 
   const onSubmit = (values: CreateDomainForm) => {
     console.log({ values });
@@ -67,6 +78,8 @@ export const useDomainActionProps = (_?: DomainActionProps) => {
     roles,
     form,
     fieldsArrayField,
-    fields
+    fields,
+    formFieldsArrayField,
+    formTypes
   };
 };
