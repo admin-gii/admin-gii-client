@@ -2,14 +2,13 @@ import { Button, Card, H1, H3 } from '@blueprintjs/core';
 import { Error } from '@components/error';
 import { InputField } from '@components/form/fields/input-field';
 import { MultipleSelectField } from '@components/form/fields/multiple-select-field';
+import { SuggestField } from '@components/form/fields/suggest-field';
 import { ArrayFieldCounter, ArrayFieldDelete } from '@styles/array-field';
 import { FlexContainer, FlexItem } from '@styles/flex-container';
 import { Space } from '@styles/space';
 import { hoc } from '@utils/hoc';
 import { useDomainActionProps } from './domain-action.props';
-import {
-  DomainActionContainer
-} from './domain-action.style';
+import { DomainActionContainer } from './domain-action.style';
 
 /**
  * <DomainAction />
@@ -17,7 +16,17 @@ import {
 
 export const DomainAction = hoc(
   useDomainActionProps,
-  ({ updatedItem, isCreate, onSubmit, roles, form, fieldsArrayField, fields }) => {
+  ({
+    updatedItem,
+    isCreate,
+    onSubmit,
+    roles,
+    form,
+    fieldsArrayField,
+    fields,
+    formFieldsArrayField,
+    formTypes
+  }) => {
     if (!updatedItem && !isCreate)
       return <Error status='404' text='Bunday sahifa topilmadi' />;
     return (
@@ -119,12 +128,74 @@ export const DomainAction = hoc(
             </FlexContainer>
           </Card>
           <Space height='1rem' />
-          <MultipleSelectField
-            control={form.control}
-            name='table_fields'
-            label="Tablitsada ko'rinadigan field-lar"
-            items={fields}
-          />
+          {fields.length > 0 && (
+            <>
+              <MultipleSelectField
+                control={form.control}
+                name='table_fields'
+                label="Tablitsada ko'rinadigan field-lar"
+                items={fields}
+              />
+              <Card>
+                <FlexContainer align='center' wrap='wrap'>
+                  <FlexItem col={1}>
+                    <H3 className='bp4-heading'>Form Field-larni qo'shish</H3>
+                  </FlexItem>
+                  {formFieldsArrayField.fields.map((field, index) => (
+                    <FlexContainer key={field.id} gap='20px'>
+                      <FlexItem col={50}>
+                        <ArrayFieldCounter>
+                          {index === 0 ? '№' : index}
+                        </ArrayFieldCounter>
+                      </FlexItem>
+                      <FlexItem col={2.12}>
+                        <SuggestField
+                          control={form.control}
+                          name={`form_fields.${index}.field_value`}
+                          label='Field-ni nomi'
+                          items={fields}
+                        />
+                      </FlexItem>
+                      <FlexItem col={2.12}>
+                        <SuggestField
+                          control={form.control}
+                          name={`form_fields.${index}.form_type_id`}
+                          label='Form Type-ni nomi'
+                          items={formTypes}
+                        />
+                      </FlexItem>
+                      {formFieldsArrayField.fields.length > 1 && (
+                        <FlexItem col={25}>
+                          <ArrayFieldDelete>
+                            <Button
+                              icon={'trash'}
+                              minimal={true}
+                              onClick={() => formFieldsArrayField.remove(index)}
+                            />
+                          </ArrayFieldDelete>
+                        </FlexItem>
+                      )}
+                    </FlexContainer>
+                  ))}
+                  <FlexItem col={1}>
+                    <Button
+                      intent='primary'
+                      icon='add'
+                      onClick={() =>
+                        formFieldsArrayField.prepend({
+                          name: '',
+                          slug: ''
+                        })
+                      }
+                    >
+                      Qo'shish
+                    </Button>
+                  </FlexItem>
+                </FlexContainer>
+              </Card>
+              <Space height='1rem' />
+            </>
+          )}
           <Button
             type='submit'
             intent='success'

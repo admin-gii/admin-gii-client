@@ -16,6 +16,7 @@ import { Domains } from '@domains/routes';
 import { DomainAction } from '@domains/routes';
 import { FormTypeAction } from '@form-types/routes/form-type-action';
 import { RolesAction } from '@roles/routes/roles-action';
+import { UsersAction } from '@users/routes/users-action';
 
 export const App = hoc(useAppProps, ({ ready }) => {
   if(!ready) return <Loading />
@@ -31,6 +32,7 @@ export const App = hoc(useAppProps, ({ ready }) => {
                 <Route path='/' exact component={Dashboard} />
                 <Route path='/domains' exact component={Domains} />
                 <Route path='/domains/action' exact component={DomainAction} />
+                <Route path='/users/action' exact component={UsersAction} />
                 <Route path='/form-types' exact component={FormTypes} />
                 <Route path='/form-types/action' exact component={FormTypeAction} />
                 <Route path='/users' exact component={Users} />
