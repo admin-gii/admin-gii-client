@@ -2,6 +2,7 @@ import { Button, Classes, Menu, MenuDivider, MenuItem, Switch } from "@blueprint
 import { Popover2 } from "@blueprintjs/popover2";
 import { DataTableColumnProps } from "@components/data-table/data-table.props";
 import { SmallMenu } from "@styles/small-menu";
+import { useHistory } from "react-router-dom";
 
 /**
  * <Users /> props
@@ -11,6 +12,7 @@ export type UsersProps = {
 }
 
 export const useUsersProps = (_?: UsersProps) => {
+  const history = useHistory()
   const tableData = new Array(15).fill({}).map((_, index) => ({
     id: index + 1,
     email: `email-${index}@test.com`,
@@ -62,7 +64,7 @@ export const useUsersProps = (_?: UsersProps) => {
 
   return {
     tableData,
-    columns
+    columns,
+    history
   }
 };
-
