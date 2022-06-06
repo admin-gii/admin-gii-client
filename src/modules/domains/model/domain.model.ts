@@ -4,4 +4,5 @@ export type CreateDomainForm = {
   roles: any[];
   fields: any[];
   table_fields: any[];
+  form_fields: any[];
 }
