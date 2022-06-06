@@ -15,6 +15,7 @@ import { FormTypes } from '@form-types/routes';
 import { Domains } from '@domains/routes';
 import { DomainAction } from '@domains/routes';
 import { FormTypeAction } from '@form-types/routes/form-type-action';
+import { RolesAction } from '@roles/routes/roles-action';
 import { UsersAction } from '@users/routes/users-action';
 
 export const App = hoc(useAppProps, ({ ready }) => {
@@ -36,6 +37,7 @@ export const App = hoc(useAppProps, ({ ready }) => {
                 <Route path='/form-types/action' exact component={FormTypeAction} />
                 <Route path='/users' exact component={Users} />
                 <Route path='/roles' exact component={Roles} />
+                <Route path={'/roles/action'} exact component={RolesAction} />
                 <Route path='/settings' exact component={Settings} />
                 <Route path='*' component={() => <Error status='404' text='Bunday sahifa topilmadi' />} />
               </Switch>
