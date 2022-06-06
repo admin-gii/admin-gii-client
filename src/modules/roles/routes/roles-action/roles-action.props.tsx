@@ -14,11 +14,6 @@ const initialValues: CreateRoleForm = {
   slug: ''
 };
 
-const roles: OptionProps[] = [
-  { label: 'Admin', value: 'admin' },
-  { label: 'User', value: 'user' }
-];
-
 export const useRolesActionProps = (_?: RolesActionProps) => {
     const form = useForm({
       defaultValues: initialValues,
@@ -31,7 +26,6 @@ export const useRolesActionProps = (_?: RolesActionProps) => {
   
   return {
     onSubmit,
-    roles,
     form
   };
 };
