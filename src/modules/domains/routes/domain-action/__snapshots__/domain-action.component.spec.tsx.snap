@@ -344,49 +344,6 @@ exports[`DomainAction Should render DomainAction component 1`] = `
         class="c7"
         height="1rem"
       />
-      <div
-        class="bp4-form-group"
-      >
-        <label
-          class="bp4-label"
-          for="table_fields-input"
-        >
-          Tablitsada ko'rinadigan field-lar 
-          <span
-            class="bp4-text-muted"
-          />
-        </label>
-        <div
-          class="bp4-form-content"
-        >
-          <div
-            class="bp4-popover-wrapper bp4-fill"
-          >
-            <div
-              aria-haspopup="true"
-              class="bp4-popover-target"
-            >
-              <div
-                class=""
-              >
-                <div
-                  class="bp4-input bp4-tag-input bp4-fill bp4-multi-select"
-                >
-                  <div
-                    class="bp4-tag-input-values"
-                  >
-                    <input
-                      class="bp4-input-ghost bp4-multi-select-tag-input-input"
-                      placeholder="Search..."
-                      value=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <button
         class="bp4-button bp4-intent-success"
         type="submit"
