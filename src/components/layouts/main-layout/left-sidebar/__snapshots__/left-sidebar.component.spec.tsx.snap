@@ -4,18 +4,15 @@ exports[`LeftSidebar Should render LeftSidebar component 1`] = `
 <DocumentFragment>
   <ul
     class="bp4-menu"
-    role="menu"
   >
     <a
       href="/"
     >
       <li
         class=""
-        role="none"
       >
         <div
           class="bp4-menu-item bp4-popover-dismiss"
-          role="menuitem"
           tabindex="0"
         >
           <span
@@ -53,11 +50,9 @@ exports[`LeftSidebar Should render LeftSidebar component 1`] = `
     >
       <li
         class=""
-        role="none"
       >
         <div
           class="bp4-menu-item bp4-popover-dismiss"
-          role="menuitem"
           tabindex="0"
         >
           <span
@@ -95,11 +90,9 @@ exports[`LeftSidebar Should render LeftSidebar component 1`] = `
     >
       <li
         class=""
-        role="none"
       >
         <div
           class="bp4-menu-item bp4-popover-dismiss"
-          role="menuitem"
           tabindex="0"
         >
           <span
@@ -137,11 +130,9 @@ exports[`LeftSidebar Should render LeftSidebar component 1`] = `
     >
       <li
         class=""
-        role="none"
       >
         <div
           class="bp4-menu-item bp4-popover-dismiss"
-          role="menuitem"
           tabindex="0"
         >
           <span
@@ -179,11 +170,9 @@ exports[`LeftSidebar Should render LeftSidebar component 1`] = `
     >
       <li
         class=""
-        role="none"
       >
         <div
           class="bp4-menu-item bp4-popover-dismiss"
-          role="menuitem"
           tabindex="0"
         >
           <span
@@ -221,11 +210,9 @@ exports[`LeftSidebar Should render LeftSidebar component 1`] = `
     >
       <li
         class=""
-        role="none"
       >
         <div
           class="bp4-menu-item bp4-popover-dismiss"
-          role="menuitem"
           tabindex="0"
         >
           <span
