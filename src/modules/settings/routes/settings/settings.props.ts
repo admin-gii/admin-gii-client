@@ -1,4 +1,4 @@
-import { CreateSettingTypeForm } from './model' ;
+import { CreateSettingTypeForm } from '@settings/model';
 import { parseQueryToString } from '@utils/get-query';
 import { useEffect, useState } from 'react';
 import {  useForm } from 'react-hook-form';
