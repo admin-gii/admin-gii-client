@@ -60,15 +60,29 @@ export const FormTypeAction = hoc(
             label='Types'
             items={types}
           />
-          <SwitchField name='has_relation' control={form.control} label="Ma'lumot turi bilan bog'lash" />
+          {selectedType?.multiple && <SwitchField name='has_relation' control={form.control} label="Ma'lumot turi bilan bog'lash" />}
           {
             selectedType?.multiple && watchHasRelationField && (
-              <SuggestField
-                control={form.control}
-                name='domain_id'
-                label='Domains'
-                items={domains}
-              />
+              <>
+                <SuggestField
+                  control={form.control}
+                  name='domain_id'
+                  label='Domains'
+                  items={domains}
+                />
+                <SuggestField
+                  control={form.control}
+                  name='domain_label_field'
+                  label='Label field'
+                  items={domains}
+                />
+                <SuggestField
+                  control={form.control}
+                  name='domain_value_field'
+                  label='Value field'
+                  items={domains}
+                />
+              </>
             )
           }
           {selectedType?.multiple && !watchHasRelationField && (
