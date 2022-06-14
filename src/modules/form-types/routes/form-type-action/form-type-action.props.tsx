@@ -21,7 +21,10 @@ const initialValues: CreateFormTypeForm = {
   slug: '',
   type: '',
   has_relation: false,
-  options: [{ label: '', value: '', id: 'nx172eg2x61e71nxf2' }]
+  options: [{ label: '', value: '', id: 'nx172eg2x61e71nxf2' }],
+  domain_id: '',
+  domain_label_field_id: '',
+  domain_value_field_id: ''
 };
 
 const types: TypeOptionGroup[] = [

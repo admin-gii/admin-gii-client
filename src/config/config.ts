@@ -2,19 +2,13 @@ const stage = process.env.NODE_ENV;
 
 const configs = {
   development: {
-    apiUrl: 'https://test.api.student.najottalim.uz',
-    landingUrl: 'https://test.landing.najottalim.uz',
-    clientId: '0506aacd-8eaa-42bf-b3d0-9b45298a66ce'
+    apiUrl: 'http://localhost:8088'
   },
   production: {
-    apiUrl: 'https://test.api.student.najottalim.uz',
-    landingUrl: 'https://test.landing.najottalim.uz',
-    clientId: '0506aacd-8eaa-42bf-b3d0-9b45298a66ce'
+    apiUrl: 'http://localhost:8088'
   },
   test: {
-    apiUrl: 'https://api.student.najottalim.uz',
-    landingUrl: 'https://landing.najottalim.uz',
-    clientId: '0506aacd-8eaa-42bf-b3d0-9b45298a66ce'
+    apiUrl: 'http://localhost:8088'
   }
 };
 

@@ -1,16 +1,10 @@
-import { StorageService, storageService } from './storage.service';
 import { api, BaseService } from './base.service';
-
-export type ProfileResponse = {
-  student: {
-    firstName: string;
-    lastName: string;
-    phone: string;
-  }
-}
+import { ProfileResponse } from '@model';
 
 class CommonService {
-  constructor(public api: BaseService, public storageService: StorageService) {}
+  constructor(public api: BaseService) {}
+
+  getMe = () => this.api.get<ProfileResponse>("/auth/me")
 }
 
-export const commonService = new CommonService(api, storageService);
+export const commonService = new CommonService(api);
