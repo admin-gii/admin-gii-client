@@ -1,4 +1,1 @@
-export type LoginFormState = {
-  email: string;
-  password: string;
-}
+export * from './auth.model'

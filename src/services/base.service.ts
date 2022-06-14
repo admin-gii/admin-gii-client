@@ -8,6 +8,16 @@ export type FetchJsonOptions = {
 
 export type RequestConfig = Omit<RequestInit, 'method' | 'body' >;
 
+export class FetchError extends Error {
+  status: number;
+  response: Promise<any>;
+
+  constructor(res: Response) {
+    super(res.statusText);
+    this.status = res.status;
+    this.response = res.json();
+  }
+}
 export class BaseService {
   private _baseURL: string;
   private _headers: Record<string, string>;
@@ -22,7 +32,7 @@ export class BaseService {
       headers: this._headers
     });
 
-    if (!res.ok) throw new Error(res.statusText);
+    if (!res.ok) throw new FetchError(res)
 
     if (options.parseResponse !== false && res.status !== 204)
       return res.json();
@@ -47,7 +57,7 @@ export class BaseService {
     });
   };
 
-  post = <T>(endpoint: string, body: BodyInit, options: RequestConfig = {}): Promise<T> => {
+  post = <Request, Response>(endpoint: string, body: Request, options: RequestConfig = {}): Promise<Response> => {
     const isFormData = body instanceof FormData;
     return this._fetchJSON(endpoint, {
       ...options,
@@ -85,8 +95,8 @@ export class BaseService {
 }
 
 export const api = new BaseService({
-  baseURL: `${config.apiUrl}/v1`,
+  baseURL: `${config.apiUrl}/api/v1`,
   headers: {
-    'client-id': config.clientId
+    'Content-Type': 'application/json'
   }
 });

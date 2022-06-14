@@ -1,5 +1,6 @@
 import { CaseReducerActions } from '@reduxjs/toolkit';
 import { RootState } from '@store';
+import { Fn } from '@types';
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { ValueOf } from './selector-hook-factory';
 import {
@@ -22,11 +23,6 @@ export type FetchSagaOptions<T, S> = {
   cache: string;
   config: TryCatchSagaOptions;
 };
-
-export type Fn = (...args: any[]) => any;
-
-export type Called<F extends (...args: any[]) => any> =
-  ReturnType<F> extends PromiseLike<infer U> ? U : ReturnType<F>;
 
 export const fetchSagaFactory = <T, S>({
   pattern,
