@@ -95,7 +95,7 @@ exports[`Layout Header Should render Header component 1`] = `
           <span
             class="bp4-button-text"
           >
-            Foydalanuvchi sozlamalari
+            Ism Familiya
           </span>
           <span
             aria-hidden="true"

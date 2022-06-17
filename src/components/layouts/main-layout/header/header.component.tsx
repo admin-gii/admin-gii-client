@@ -36,7 +36,7 @@ export const Header = hoc(useHeaderProps, ({ profile }) => {
             className={Classes.MINIMAL}
             icon='user'
             rightIcon='caret-down'
-            text={`${profile.first_name} ${profile.last_name}`}
+            text={`${profile?.first_name || 'Ism'} ${profile?.last_name || 'Familiya'}`}
           />
         </Popover2>
       </NavbarGroup>
