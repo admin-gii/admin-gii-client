@@ -7,10 +7,11 @@ import {
 } from '@blueprintjs/core';
 import { Popover2 } from '@blueprintjs/popover2';
 import { DataTableColumnProps } from '@components/data-table/data-table.props';
+import { ToasterContext } from '@components/toaster';
 import { rolesActions, useRolesList } from '@roles/store';
 import { useAppDispatch } from '@store';
 import { SmallMenu } from '@styles/small-menu';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 /**
  * <Roles /> props
@@ -21,6 +22,7 @@ export const useRolesProps = (_?: RolesProps) => {
   const history = useHistory()
   const dispatch = useAppDispatch();
   const roles = useRolesList()
+  const toaster = useContext(ToasterContext)
 
   const columns: DataTableColumnProps[] = [
     { index: 'id', name: 'ID', sorter: () => {}, width: 55 },
@@ -33,7 +35,10 @@ export const useRolesProps = (_?: RolesProps) => {
       render: item => {
         const deleteItem = () => {
           dispatch(rolesActions.deleteRole({ data: item.id, callback: () => {
-            console.log('Success delete')
+            toaster.show({
+              message: 'Role muvaffaqiyatli o\'chirildi',
+              intent: 'success',
+            })
             history.go(0)
           } }))
         }

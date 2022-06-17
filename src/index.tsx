@@ -13,8 +13,9 @@ import fetchIntercept from 'fetch-intercept';
 import { storageService } from './services/storage.service';
 import { commonActions } from './store/common/common.slice';
 import { FC } from 'react';
-import { HotkeysProvider } from '@blueprintjs/core';
+import { HotkeysProvider, Toaster } from '@blueprintjs/core';
 import './styles/index.css';
+import { ToasterContext } from '@components/toaster';
 
 interface InterceptError extends Error {
   status?: string | number;
@@ -55,6 +56,12 @@ fetchIntercept.register({
   }
 });
 
+
+const MyGlobalToaster = Toaster.create({
+  position: 'top',
+  className: 'my-global-toaster',
+})
+
 export const GlobalWrapper: FC = ({ children }) => {
   return (
     <HotkeysProvider>
@@ -62,7 +69,9 @@ export const GlobalWrapper: FC = ({ children }) => {
         <ReduxProvider store={store}>
           <ThemeProvider theme={theme}>
             <GlobalStyles />
-            {children}
+            <ToasterContext.Provider value={MyGlobalToaster}>
+              {children}
+            </ToasterContext.Provider>
           </ThemeProvider>
         </ReduxProvider>
       </BrowserRouter>

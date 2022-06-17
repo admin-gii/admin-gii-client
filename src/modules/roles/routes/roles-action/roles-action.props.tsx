@@ -1,8 +1,9 @@
+import { ToasterContext } from '@components/toaster';
 import { RoleModel } from '@model';
 import { CreateRoleForm } from '@roles/model';
 import { rolesActions } from '@roles/store';
 import { parseQueryToString } from '@utils/get-query';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -22,6 +23,7 @@ export const useRolesActionProps = (_?: RolesActionProps) => {
   const history = useHistory();
   const [updatedItem, setUpdatedItem] = useState<RoleModel | null>(null);
   const [isCreate, setIsCreate] = useState(true);
+  const toaster = useContext(ToasterContext)
   const form = useForm({
     defaultValues: initialValues,
     mode: 'onBlur'
@@ -33,6 +35,10 @@ export const useRolesActionProps = (_?: RolesActionProps) => {
         rolesActions.addRole({
           data: values,
           callback: () => {
+            toaster.show({
+              message: 'Role muvaffaqiyatli qoʻshildi',
+              intent: 'success',
+            })
             form.reset();
             history.push('/roles');
           }
@@ -43,6 +49,10 @@ export const useRolesActionProps = (_?: RolesActionProps) => {
         rolesActions.updateRole({
           data: { id: updatedItem.id, ...values },
           callback: () => {
+            toaster.show({
+              message: 'Role muvaffaqiyatli yangilandi',
+              intent: 'success',
+            })
             form.reset();
             history.push('/roles');
           }
