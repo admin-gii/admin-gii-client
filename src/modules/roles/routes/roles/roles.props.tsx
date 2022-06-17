@@ -34,7 +34,7 @@ export const useRolesProps = (_?: RolesProps) => {
         const ActionsMenu = (
           <SmallMenu>
             <Menu>
-              <MenuItem text='Edit' icon='edit' />
+              <MenuItem text='Edit' icon='edit' onClick={() => history.push(`/roles/action?edit=${item.id}`)} />
               <MenuDivider />
               <MenuItem text='Delete' icon='trash' />
             </Menu>

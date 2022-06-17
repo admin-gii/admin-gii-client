@@ -10,16 +10,17 @@ import { SuggestField } from '@components/form/fields/suggest-field';
 /**
  * <UsersAction />
  */
-export const UsersAction = hoc(useUsersActionProps,
+export const UsersAction = hoc(
+  useUsersActionProps,
   ({ updatedItem, isCreate, onSubmit, roles, form }) => {
     if (!updatedItem && !isCreate)
       return <Error status='404' text='Bunday sahifa topilmadi' />;
     return (
-  <UsersActionContainer>
+      <UsersActionContainer>
         <H1>Yangi foydalanuvchi qo'shish</H1>
         <Space height='2rem' />
         <form className='w-half' onSubmit={form.handleSubmit(onSubmit)}>
-        <InputField
+          <InputField
             control={form.control}
             type='email'
             name='email'
@@ -62,7 +63,7 @@ export const UsersAction = hoc(useUsersActionProps,
             text='Saqlash'
           />
         </form>
-  </UsersActionContainer>
+      </UsersActionContainer>
     );
   }
 );

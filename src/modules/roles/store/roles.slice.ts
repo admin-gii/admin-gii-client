@@ -31,12 +31,18 @@ export const { actions: rolesActions, reducer: rolesReducer } = createSlice({
     fetchRoles(state) {
       state.loading = true
     },
+    fetchRole(state, action: PayloadAction<PayloadWithCallback<string>>) {
+      state.loading = true
+    },
     fetchRolesFulfilled(state, action: PayloadAction<RoleModel[]>) {
       state.roles = action.payload;
     },
     addRole(state, action: PayloadAction<PayloadWithCallback<CreateRoleForm>>) {
       state.loading = true
     },
+    updateRole(state, action: PayloadAction<PayloadWithCallback<RoleModel>>) {
+      state.loading = true
+    }
   }
 });
 

@@ -1,4 +1,5 @@
 import { Button, H1 } from '@blueprintjs/core';
+import { Error } from '@components/error';
 import { InputField } from '@components/form/fields/input-field';
 import { Space } from '@styles/space';
 import { hoc } from '@utils/hoc';
@@ -13,10 +14,14 @@ export const RolesAction = hoc(
   ({
     onSubmit,
     form,
+    updatedItem,
+    isCreate
   }) => {
+    if (!updatedItem && !isCreate)
+      return <Error status='404' text='Bunday sahifa topilmadi' />;
     return (
       <RolesActionContainer>
-        <H1>Yangi role qo'shish</H1>
+        <H1>{ !updatedItem ? 'Yangi role qo\'shish' : `№ ${updatedItem.id} role-ni yangilash` }</H1>
         <Space height='2rem' />
         <form className='w-half' onSubmit={form.handleSubmit(onSubmit)}>
           <InputField
@@ -45,7 +50,7 @@ export const RolesAction = hoc(
             type='submit'
             intent='success'
             icon='cloud-upload'
-            text='Saqlash'
+            text={!updatedItem ? 'Saqlash' : 'Yangilash'}
           />
         </form>
       </RolesActionContainer>

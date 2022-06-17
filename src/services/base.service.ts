@@ -75,7 +75,7 @@ export class BaseService {
     });
   };
 
-  put = <T>(endpoint: string, body: BodyInit, options: RequestConfig = {}): Promise<T> => {
+  put = <Request, Response>(endpoint: string, body: Request, options: RequestConfig = {}): Promise<Response> => {
     const isFormData = body instanceof FormData;
     return this._fetchJSON(endpoint, {
       ...options,
