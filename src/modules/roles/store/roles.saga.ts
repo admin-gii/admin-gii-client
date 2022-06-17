@@ -30,11 +30,17 @@ export function* requestUpdateRole(action: PayloadAction<PayloadWithCallback<Rol
   yield call(action.payload.callback);
 }
 
+export function *requestDeleteRole(action: PayloadAction<PayloadWithCallback<number>>) {
+  yield call(rolesService.deleteRole, action.payload.data);
+  yield call(action.payload.callback);
+}
+
 export function* rolesRootSaga() {
   yield all([
     takeLatest(rolesActions.fetchRoles, tryCatchSaga(requestRoles)),
     takeLatest(rolesActions.fetchRole, tryCatchSaga(requestRole)),
     takeLatest(rolesActions.addRole, tryCatchSaga(requestAddRole)),
     takeLatest(rolesActions.updateRole, tryCatchSaga(requestUpdateRole)),
+    takeLatest(rolesActions.deleteRole, tryCatchSaga(requestDeleteRole)),
   ]);
 }

@@ -42,6 +42,9 @@ export const { actions: rolesActions, reducer: rolesReducer } = createSlice({
     },
     updateRole(state, action: PayloadAction<PayloadWithCallback<RoleModel>>) {
       state.loading = true
+    },
+    deleteRole(state, action: PayloadAction<PayloadWithCallback<number>>) {
+      state.loading = true
     }
   }
 });

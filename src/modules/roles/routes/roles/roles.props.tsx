@@ -31,12 +31,19 @@ export const useRolesProps = (_?: RolesProps) => {
       name: '',
       width: 55,
       render: item => {
+        const deleteItem = () => {
+          dispatch(rolesActions.deleteRole({ data: item.id, callback: () => {
+            console.log('Success delete')
+            history.go(0)
+          } }))
+        }
+
         const ActionsMenu = (
           <SmallMenu>
             <Menu>
               <MenuItem text='Edit' icon='edit' onClick={() => history.push(`/roles/action?edit=${item.id}`)} />
               <MenuDivider />
-              <MenuItem text='Delete' icon='trash' />
+              <MenuItem text='Delete' icon='trash' onClick={deleteItem} />
             </Menu>
           </SmallMenu>
         );

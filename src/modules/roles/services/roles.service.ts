@@ -12,6 +12,8 @@ export class RolesService {
   addRole = (data: CreateRoleForm) => this.api.post<CreateRoleForm, RoleResponse>('/roles', data)
 
   updateRole = ({id, ...data}: RoleModel) => this.api.put<CreateRoleForm, RoleResponse>(`/roles/${id}`, data)
+
+  deleteRole = (id: number) => this.api.delete(`/roles/${id}`)
 }
 
 export const rolesService = new RolesService(api);
