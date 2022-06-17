@@ -9,7 +9,7 @@ export const tryCatchSaga = tryCatchSagaFactory(commonActions);
 
 function* requestProfile() {
   const res: Called<typeof commonService.getMe> = yield call(commonService.getMe);
-  yield put(commonActions.fetchProfileFulfilled(res));
+  yield put(commonActions.fetchProfileFulfilled(res.data));
 }
 
 export function* commonRootSaga() {

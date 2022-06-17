@@ -17,7 +17,7 @@ export function* requestLogin({
     username: payload.email,
     password: payload.password
   });
-  yield fork(storageService.setAccessToken, res.token);
+  yield fork(storageService.setAccessToken, res.data.token);
   yield put(commonActions.fetchProfile());
 }
 
