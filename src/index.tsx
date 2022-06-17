@@ -11,11 +11,11 @@ import { ErrorBoundary } from '@components/error-boundary';
 import { theme } from './styles';
 import fetchIntercept from 'fetch-intercept';
 import { storageService } from './services/storage.service';
-import { authActions } from '@auth/store/auth.slice';
 import { commonActions } from './store/common/common.slice';
-import './styles/index.css';
 import { FC } from 'react';
-import { HotkeysProvider } from '@blueprintjs/core';
+import { HotkeysProvider, Toaster } from '@blueprintjs/core';
+import './styles/index.css';
+import { ToasterContext } from '@components/toaster';
 
 interface InterceptError extends Error {
   status?: string | number;
@@ -39,11 +39,10 @@ fetchIntercept.register({
       storageService.removeRefreshToken();
       storageService.removeAccessToken();
       storageService.deleteCookie('shared_token');
-      store.dispatch(authActions.logout());
       store.dispatch(commonActions.removeProfile());
     }
     if (!res.ok) {
-      const error: InterceptError = new Error('Ooops! Something went wrong!');
+      const error: InterceptError = new Error('Oops! Something went wrong!');
       error.status = res.status;
       error.body = res.json();
       throw error;
@@ -57,6 +56,12 @@ fetchIntercept.register({
   }
 });
 
+
+const MyGlobalToaster = Toaster.create({
+  position: 'top',
+  className: 'my-global-toaster',
+})
+
 export const GlobalWrapper: FC = ({ children }) => {
   return (
     <HotkeysProvider>
@@ -64,7 +69,9 @@ export const GlobalWrapper: FC = ({ children }) => {
         <ReduxProvider store={store}>
           <ThemeProvider theme={theme}>
             <GlobalStyles />
-            {children}
+            <ToasterContext.Provider value={MyGlobalToaster}>
+              {children}
+            </ToasterContext.Provider>
           </ThemeProvider>
         </ReduxProvider>
       </BrowserRouter>

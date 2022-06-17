@@ -6,16 +6,11 @@ const name = 'auth';
 
 export type AuthState = {
   loading: boolean;
-  tokens: {
-    accessToken: string;
-    refreshToken: string;
-  } | null;
   error: any;
 }
 
 const initialState: AuthState = {
   loading: false,
-  tokens: null,
   error: null
 };
 
@@ -25,9 +20,6 @@ export const { actions: authActions, reducer: authReducer } = createSlice({
   reducers: {
     setLoading(state, action) {
       state.loading = action.payload;
-    },
-    logout(state) {
-      state.tokens = null;
     },
     login(state, payload: PayloadAction<LoginFormState>) {
       state.loading = true;

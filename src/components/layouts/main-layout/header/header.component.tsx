@@ -16,9 +16,10 @@ import { useHeaderProps } from './header.props';
 /**
  * <Header />
  */
-export const Header = hoc(useHeaderProps, () => {
+export const Header = hoc(useHeaderProps, ({ profile }) => {
   const ProfileSettingsMenu = (
     <Menu>
+      <MenuItem icon='settings' text='Sozlamalar' />
       <MenuItem icon='unlock' text='Chiqish' />
     </Menu>
   );
@@ -35,7 +36,7 @@ export const Header = hoc(useHeaderProps, () => {
             className={Classes.MINIMAL}
             icon='user'
             rightIcon='caret-down'
-            text='Foydalanuvchi sozlamalari'
+            text={`${profile?.first_name || 'Ism'} ${profile?.last_name || 'Familiya'}`}
           />
         </Popover2>
       </NavbarGroup>

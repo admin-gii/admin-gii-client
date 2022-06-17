@@ -1,4 +1,6 @@
 import { OptionProps } from '@blueprintjs/core';
+import { rolesActions, useRolesList } from '@roles/store';
+import { useAppDispatch } from '@store';
 import { CreateUserForm } from '@users/model/user.model';
 import { parseQueryToString } from '@utils/get-query';
 import { useEffect, useState } from 'react';
@@ -19,13 +21,10 @@ const initialValues: CreateUserForm = {
   status: true
 };
 
-const roles: OptionProps[] = [
-  { label: 'Admin', value: 'admin' },
-  { label: 'User', value: 'user' }
-];
-
 export const useUsersActionProps = (_?: UsersActionProps) => {
   const history = useHistory();
+  const dispatch = useAppDispatch();
+  const roles = useRolesList()
   const [updatedItem, setUpdatedItem] = useState(null);
   const [isCreate, setIsCreate] = useState(true);
   const form = useForm({
@@ -46,11 +45,15 @@ export const useUsersActionProps = (_?: UsersActionProps) => {
     }
   }, [history.location.search]);
 
+  useEffect(() => {
+    dispatch(rolesActions.fetchRoles())
+  }, [dispatch])
+
   return {
     updatedItem,
     isCreate,
     onSubmit,
-    roles,
+    roles: roles.map<OptionProps>(role => ({ label: role.name, value: role.id })),
     form
   };
 };

@@ -57,7 +57,7 @@ export class BaseService {
     });
   };
 
-  post = <Request, Response>(endpoint: string, body: Request, options: RequestConfig = {}): Promise<Response> => {
+  post = <Request, Response>(endpoint: string, body?: Request, options: RequestConfig = {}): Promise<Response> => {
     const isFormData = body instanceof FormData;
     return this._fetchJSON(endpoint, {
       ...options,
@@ -66,7 +66,7 @@ export class BaseService {
     });
   };
 
-  patch = <T>(endpoint: string, body: BodyInit, options: RequestConfig = {}): Promise<T> => {
+  patch = <T>(endpoint: string, body?: BodyInit, options: RequestConfig = {}): Promise<T> => {
     const isFormData = body instanceof FormData;
     return this._fetchJSON(endpoint, {
       ...options,
@@ -75,7 +75,7 @@ export class BaseService {
     });
   };
 
-  put = <T>(endpoint: string, body: BodyInit, options: RequestConfig = {}): Promise<T> => {
+  put = <Request, Response>(endpoint: string, body?: Request, options: RequestConfig = {}): Promise<Response> => {
     const isFormData = body instanceof FormData;
     return this._fetchJSON(endpoint, {
       ...options,
@@ -84,7 +84,7 @@ export class BaseService {
     });
   };
 
-  delete = <T>(endpoint: string, body: BodyInit, options: RequestConfig = {}): Promise<T> => {
+  delete = <Request, Response = void>(endpoint: string, body?: Request, options: RequestConfig = {}): Promise<Response> => {
     const isFormData = body instanceof FormData;
     return this._fetchJSON(endpoint, {
       ...options,

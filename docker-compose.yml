@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  app:
+    container_name: ${CONTAINER_NAME}
+    build:
+      context: .
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+    env_file: ./docker.env
+    restart: always
+    ports:
+      - target: ${NGINX_FRONTEND_PORT}
+        published: ${NGINX_FRONTEND_PORT}
+        protocol: tcp
+        mode: host
+    command: sh -c "envsubst '$$NGINX_FRONTEND_HOST $$NGINX_FRONTEND_PORT $$NGINX_FRONTEND_DIR $$CONTAINER_NAME' < /etc/nginx/conf.d/nginx.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    deploy:
+      mode: replicated
+      replicas: 1
+
+ 

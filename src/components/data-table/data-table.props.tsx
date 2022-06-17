@@ -2,7 +2,7 @@
  * <DataTable /> props
  */
 
-import { Menu, MenuItem, Utils } from '@blueprintjs/core';
+import { Menu, MenuItem } from '@blueprintjs/core';
 import {
   Cell,
   ColumnHeaderCell,

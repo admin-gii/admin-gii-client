@@ -1,4 +1,0 @@
-APP=new-nt-user-frontend
-SERVICE_NAME=nt_user-frontend-new
-REGISTRY=gitlab.abutech.uz:5050
-PROJECT_NAME=najottalim.uz

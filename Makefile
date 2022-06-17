@@ -1,30 +1,33 @@
-CURRENT_DIR=$(shell pwd)
+ifneq (,$(wildcard ./docker.env))
+    include docker.env
+    export
+endif
 
-APP=$(shell basename ${CURRENT_DIR})
 
-APP_CMD_DIR=${CURRENT_DIR}/cmd
+build:
+	docker compose up --build -d app
 
-IMG_NAME=${APP}
-#REGISTRY=${REGISTRY}
+down:
+	docker compose down -v
 
-ENV_TAG=${TAG}
+stop:
+	docker compose stop
 
-# Including
-include .build_info
+start:
+	docker compose start
 
-build-app:
-	npm install --legacy-peer-deps
-	npm run build
+logs:
+	docker logs --follow ${CONTAINER_NAME}
 
-build-image:
-	docker build --rm -t ${REGISTRY}/${PROJECT_NAME}/${APP}/${IMG_NAME}:${TAG} -f ${DOCKERFILE} .
-	docker tag ${REGISTRY}/${PROJECT_NAME}/${APP}/${IMG_NAME}:${TAG} ${REGISTRY}/${PROJECT_NAME}/${APP}/${IMG_NAME}:${ENV_TAG}
+bash:
+	docker exec -it ${CONTAINER_NAME} sh
 
-push-image:
-	docker push ${REGISTRY}/${PROJECT_NAME}/${APP}/${IMG_NAME}:${TAG}
-	docker push ${REGISTRY}/${PROJECT_NAME}/${APP}/${IMG_NAME}:${ENV_TAG}
 
-git-push:
-	git pull
-	git commit -am 'update'
-	git push
+
+
+
+
+
+
+
+
