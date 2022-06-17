@@ -12,9 +12,9 @@ import { theme } from './styles';
 import fetchIntercept from 'fetch-intercept';
 import { storageService } from './services/storage.service';
 import { commonActions } from './store/common/common.slice';
-import './styles/index.css';
 import { FC } from 'react';
 import { HotkeysProvider } from '@blueprintjs/core';
+import './styles/index.css';
 
 interface InterceptError extends Error {
   status?: string | number;
@@ -41,7 +41,7 @@ fetchIntercept.register({
       store.dispatch(commonActions.removeProfile());
     }
     if (!res.ok) {
-      const error: InterceptError = new Error('Ooops! Something went wrong!');
+      const error: InterceptError = new Error('Oops! Something went wrong!');
       error.status = res.status;
       error.body = res.json();
       throw error;

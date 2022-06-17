@@ -1,5 +1,7 @@
 import { RoleModel } from '@model';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { CreateRoleForm } from '@roles/model';
+import { PayloadWithCallback } from '@types';
 import { selectorHookFactory } from '@utils/selector-hook-factory';
 
 const name = 'roles';
@@ -31,7 +33,10 @@ export const { actions: rolesActions, reducer: rolesReducer } = createSlice({
     },
     fetchRolesFulfilled(state, action: PayloadAction<RoleModel[]>) {
       state.roles = action.payload;
-    }
+    },
+    addRole(state, action: PayloadAction<PayloadWithCallback<CreateRoleForm>>) {
+      state.loading = true
+    },
   }
 });
 
