@@ -11,7 +11,7 @@ export type RoleModel = {
   slug: string;
 } & ResponseDefaultFields
 
-export type RoleResponse = ResponseTemplate<RoleModel>;
+export type RoleResponse = ResponseTemplate<RoleModel[]>;
 
 export type ProfileModel = {
   first_name: string;

@@ -7,7 +7,10 @@ import {
 } from '@blueprintjs/core';
 import { Popover2 } from '@blueprintjs/popover2';
 import { DataTableColumnProps } from '@components/data-table/data-table.props';
+import { rolesActions, useRolesList } from '@roles/store';
+import { useAppDispatch } from '@store';
 import { SmallMenu } from '@styles/small-menu';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 /**
  * <Roles /> props
@@ -16,13 +19,8 @@ export type RolesProps = {};
 
 export const useRolesProps = (_?: RolesProps) => {
   const history = useHistory()
-
-  const tableData = new Array(15).fill({}).map((_, index) => ({
-    id: index + 1,
-    name: `Page-${index}`,
-    slug: `page-${index}`,
-    roles: [{ id: 1, name: 'Admin', slug: 'admin' }]
-  }));
+  const dispatch = useAppDispatch();
+  const roles = useRolesList()
 
   const columns: DataTableColumnProps[] = [
     { index: 'id', name: 'ID', sorter: () => {}, width: 55 },
@@ -51,8 +49,12 @@ export const useRolesProps = (_?: RolesProps) => {
     }
   ];
 
+  useEffect(() => {
+    dispatch(rolesActions.fetchRoles())
+  }, [dispatch])
+
   return {
-    tableData,
+    tableData: roles,
     columns,
     history
   };
