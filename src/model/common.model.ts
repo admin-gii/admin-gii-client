@@ -6,19 +6,19 @@ export type ResponseDefaultFields = {
   updated_at: string;
 };
 
-export type RoleResponse = ResponseTemplate<
-  {
-    name: string;
-    slug: string;
-  } & ResponseDefaultFields
->;
+export type RoleModel = {
+  name: string;
+  slug: string;
+} & ResponseDefaultFields
 
-export type ProfileResponse = ResponseTemplate<
-  {
-    first_name: string;
-    last_name: string;
-    email: string;
-    phone: string;
-    role: RoleResponse;
-  } & ResponseDefaultFields
->;
+export type RoleResponse = ResponseTemplate<RoleModel>;
+
+export type ProfileModel = {
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  role: RoleResponse;
+} & ResponseDefaultFields
+
+export type ProfileResponse = ResponseTemplate<ProfileModel>;

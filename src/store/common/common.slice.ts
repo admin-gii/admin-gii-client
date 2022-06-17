@@ -1,3 +1,4 @@
+import { ProfileModel } from '@model';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { selectorHookFactory } from '@utils/selector-hook-factory';
 
@@ -6,7 +7,7 @@ const name = 'common';
 type CommonState = {
   loading: boolean;
   error: any;
-  profile: any;
+  profile: ProfileModel;
   ready: boolean;
 }
 
@@ -51,5 +52,5 @@ export const { actions: commonActions, reducer: commonReducer } = createSlice({
 
 export const useCommonSelector = selectorHookFactory(name);
 
-export const useProfileSelector = () => useCommonSelector('profile');
-export const useReadySelector = () => useCommonSelector('ready');
+export const useProfileSelector = () => useCommonSelector<ProfileModel>('profile');
+export const useReadySelector = () => useCommonSelector<boolean>('ready');
