@@ -4,23 +4,23 @@ ifneq (,$(wildcard ./docker.env))
 endif
 
 
-build:
-	docker compose up --build -d app
+build-app:
+	docker build --rm -t admin-gii-client:latest .
 
-down:
-	docker compose down -v
+down-app:
+	docker rm admin-gii-client
 
-stop:
-	docker compose stop
+stop-app:
+	docker stop admin-gii-client:latest
 
-start:
-	docker compose start
+start-app:
+	docker start admin-gii-client:latest
 
-logs:
-	docker logs --follow ${CONTAINER_NAME}
+logs-app:
+	docker logs --follow admin-gii-client
 
-bash:
-	docker exec -it ${CONTAINER_NAME} sh
+bash-app:
+	docker exec -it admin-gii-client sh
 
 
 
